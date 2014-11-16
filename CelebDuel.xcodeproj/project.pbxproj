@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B17D9181A1837630071A429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9171A1837630071A429 /* main.m */; };
+		3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91A1A1837630071A429 /* AppDelegate.m */; };
+		3B17D91E1A1837630071A429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91D1A1837630071A429 /* ViewController.m */; };
+		3B17D9211A1837630071A429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D91F1A1837630071A429 /* Main.storyboard */; };
+		3B17D9231A1837630071A429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9221A1837630071A429 /* Images.xcassets */; };
+		3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9241A1837630071A429 /* LaunchScreen.xib */; };
+		3B17D9321A1837630071A429 /* CelebDuelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9311A1837630071A429 /* CelebDuelTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B17D92C1A1837630071A429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B17D90A1A1837630071A429 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B17D9111A1837630071A429;
+			remoteInfo = CelebDuel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B17D9121A1837630071A429 /* CelebDuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelebDuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B17D9161A1837630071A429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B17D9171A1837630071A429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B17D9191A1837630071A429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B17D91A1A1837630071A429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B17D91C1A1837630071A429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3B17D91D1A1837630071A429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B17D9201A1837630071A429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B17D9221A1837630071A429 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3B17D9251A1837630071A429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3B17D92B1A1837630071A429 /* CelebDuelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelebDuelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B17D9301A1837630071A429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B17D9311A1837630071A429 /* CelebDuelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelebDuelTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B17D90F1A1837630071A429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B17D9281A1837630071A429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B17D9091A1837630071A429 = {
+			isa = PBXGroup;
+			children = (
+				3B17D9141A1837630071A429 /* CelebDuel */,
+				3B17D92E1A1837630071A429 /* CelebDuelTests */,
+				3B17D9131A1837630071A429 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B17D9131A1837630071A429 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D9121A1837630071A429 /* CelebDuel.app */,
+				3B17D92B1A1837630071A429 /* CelebDuelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B17D9141A1837630071A429 /* CelebDuel */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D9191A1837630071A429 /* AppDelegate.h */,
+				3B17D91A1A1837630071A429 /* AppDelegate.m */,
+				3B17D91C1A1837630071A429 /* ViewController.h */,
+				3B17D91D1A1837630071A429 /* ViewController.m */,
+				3B17D91F1A1837630071A429 /* Main.storyboard */,
+				3B17D9221A1837630071A429 /* Images.xcassets */,
+				3B17D9241A1837630071A429 /* LaunchScreen.xib */,
+				3B17D9151A1837630071A429 /* Supporting Files */,
+			);
+			path = CelebDuel;
+			sourceTree = "<group>";
+		};
+		3B17D9151A1837630071A429 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D9161A1837630071A429 /* Info.plist */,
+				3B17D9171A1837630071A429 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B17D92E1A1837630071A429 /* CelebDuelTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D9311A1837630071A429 /* CelebDuelTests.m */,
+				3B17D92F1A1837630071A429 /* Supporting Files */,
+			);
+			path = CelebDuelTests;
+			sourceTree = "<group>";
+		};
+		3B17D92F1A1837630071A429 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D9301A1837630071A429 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B17D9111A1837630071A429 /* CelebDuel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B17D9351A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuel" */;
+			buildPhases = (
+				3B17D90E1A1837630071A429 /* Sources */,
+				3B17D90F1A1837630071A429 /* Frameworks */,
+				3B17D9101A1837630071A429 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CelebDuel;
+			productName = CelebDuel;
+			productReference = 3B17D9121A1837630071A429 /* CelebDuel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B17D92A1A1837630071A429 /* CelebDuelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B17D9381A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuelTests" */;
+			buildPhases = (
+				3B17D9271A1837630071A429 /* Sources */,
+				3B17D9281A1837630071A429 /* Frameworks */,
+				3B17D9291A1837630071A429 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B17D92D1A1837630071A429 /* PBXTargetDependency */,
+			);
+			name = CelebDuelTests;
+			productName = CelebDuelTests;
+			productReference = 3B17D92B1A1837630071A429 /* CelebDuelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B17D90A1A1837630071A429 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = EastoftheWestEnd;
+				TargetAttributes = {
+					3B17D9111A1837630071A429 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3B17D92A1A1837630071A429 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3B17D9111A1837630071A429;
+					};
+				};
+			};
+			buildConfigurationList = 3B17D90D1A1837630071A429 /* Build configuration list for PBXProject "CelebDuel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B17D9091A1837630071A429;
+			productRefGroup = 3B17D9131A1837630071A429 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B17D9111A1837630071A429 /* CelebDuel */,
+				3B17D92A1A1837630071A429 /* CelebDuelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B17D9101A1837630071A429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B17D9211A1837630071A429 /* Main.storyboard in Resources */,
+				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
+				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B17D9291A1837630071A429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B17D90E1A1837630071A429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B17D91E1A1837630071A429 /* ViewController.m in Sources */,
+				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
+				3B17D9181A1837630071A429 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B17D9271A1837630071A429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B17D9321A1837630071A429 /* CelebDuelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B17D92D1A1837630071A429 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B17D9111A1837630071A429 /* CelebDuel */;
+			targetProxy = 3B17D92C1A1837630071A429 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B17D91F1A1837630071A429 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B17D9201A1837630071A429 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B17D9241A1837630071A429 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B17D9251A1837630071A429 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B17D9331A1837630071A429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B17D9341A1837630071A429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B17D9361A1837630071A429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CelebDuel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3B17D9371A1837630071A429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CelebDuel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3B17D9391A1837630071A429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CelebDuelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CelebDuel.app/CelebDuel";
+			};
+			name = Debug;
+		};
+		3B17D93A1A1837630071A429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CelebDuelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CelebDuel.app/CelebDuel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B17D90D1A1837630071A429 /* Build configuration list for PBXProject "CelebDuel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B17D9331A1837630071A429 /* Debug */,
+				3B17D9341A1837630071A429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B17D9351A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B17D9361A1837630071A429 /* Debug */,
+				3B17D9371A1837630071A429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3B17D9381A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B17D9391A1837630071A429 /* Debug */,
+				3B17D93A1A1837630071A429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B17D90A1A1837630071A429 /* Project object */;
+}

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  CelebDuel
 //
 //  Created by Kervins Valcourt on 11/15/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-

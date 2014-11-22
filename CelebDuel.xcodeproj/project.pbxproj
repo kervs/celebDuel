@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		3B17D9181A1837630071A429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9171A1837630071A429 /* main.m */; };
 		3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91A1A1837630071A429 /* AppDelegate.m */; };
-		3B17D91E1A1837630071A429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91D1A1837630071A429 /* ViewController.m */; };
-		3B17D9211A1837630071A429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D91F1A1837630071A429 /* Main.storyboard */; };
 		3B17D9231A1837630071A429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9221A1837630071A429 /* Images.xcassets */; };
 		3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9241A1837630071A429 /* LaunchScreen.xib */; };
 		3B17D9321A1837630071A429 /* CelebDuelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9311A1837630071A429 /* CelebDuelTests.m */; };
+		3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D93C1A18385F0071A429 /* MainViewController.m */; };
+		3B7D4E811A2071BF00FDCFB3 /* DEMOLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E801A2071BF00FDCFB3 /* DEMOLeftMenuViewController.m */; };
+		3B7D4E851A2071E100FDCFB3 /* DEMORightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E841A2071E100FDCFB3 /* DEMORightMenuViewController.m */; };
+		BA2224ED4DB814597C5C25D8 /* libPods-CelebDuel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,20 @@
 		3B17D9171A1837630071A429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B17D9191A1837630071A429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3B17D91A1A1837630071A429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3B17D91C1A1837630071A429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3B17D91D1A1837630071A429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3B17D9201A1837630071A429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B17D9221A1837630071A429 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B17D9251A1837630071A429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3B17D92B1A1837630071A429 /* CelebDuelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelebDuelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B17D9301A1837630071A429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B17D9311A1837630071A429 /* CelebDuelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelebDuelTests.m; sourceTree = "<group>"; };
+		3B17D93B1A18385F0071A429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3B17D93C1A18385F0071A429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3B7D4E801A2071BF00FDCFB3 /* DEMOLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOLeftMenuViewController.m; sourceTree = "<group>"; };
+		3B7D4E821A2071D400FDCFB3 /* DEMOLeftMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOLeftMenuViewController.h; sourceTree = "<group>"; };
+		3B7D4E831A2071E100FDCFB3 /* DEMORightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORightMenuViewController.h; sourceTree = "<group>"; };
+		3B7D4E841A2071E100FDCFB3 /* DEMORightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORightMenuViewController.m; sourceTree = "<group>"; };
+		43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CelebDuel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.debug.xcconfig"; sourceTree = "<group>"; };
+		EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2224ED4DB814597C5C25D8 /* libPods-CelebDuel.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +75,8 @@
 				3B17D9141A1837630071A429 /* CelebDuel */,
 				3B17D92E1A1837630071A429 /* CelebDuelTests */,
 				3B17D9131A1837630071A429 /* Products */,
+				584E2EFB7EC4E70738F9FCD5 /* Pods */,
+				49CCB4A942B62240D59804EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +92,9 @@
 		3B17D9141A1837630071A429 /* CelebDuel */ = {
 			isa = PBXGroup;
 			children = (
+				3B2CA71A1A203725004B2AD7 /* MainView */,
 				3B17D9191A1837630071A429 /* AppDelegate.h */,
 				3B17D91A1A1837630071A429 /* AppDelegate.m */,
-				3B17D91C1A1837630071A429 /* ViewController.h */,
-				3B17D91D1A1837630071A429 /* ViewController.m */,
-				3B17D91F1A1837630071A429 /* Main.storyboard */,
 				3B17D9221A1837630071A429 /* Images.xcassets */,
 				3B17D9241A1837630071A429 /* LaunchScreen.xib */,
 				3B17D9151A1837630071A429 /* Supporting Files */,
@@ -119,6 +128,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3B2CA71A1A203725004B2AD7 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D93B1A18385F0071A429 /* MainViewController.h */,
+				3B17D93C1A18385F0071A429 /* MainViewController.m */,
+				3B7D4E821A2071D400FDCFB3 /* DEMOLeftMenuViewController.h */,
+				3B7D4E801A2071BF00FDCFB3 /* DEMOLeftMenuViewController.m */,
+				3B7D4E831A2071E100FDCFB3 /* DEMORightMenuViewController.h */,
+				3B7D4E841A2071E100FDCFB3 /* DEMORightMenuViewController.m */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		49CCB4A942B62240D59804EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		584E2EFB7EC4E70738F9FCD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */,
+				EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B17D9351A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuel" */;
 			buildPhases = (
+				6D91E76F9C6FB5F40BDE0BC1 /* Check Pods Manifest.lock */,
 				3B17D90E1A1837630071A429 /* Sources */,
 				3B17D90F1A1837630071A429 /* Frameworks */,
 				3B17D9101A1837630071A429 /* Resources */,
+				CFD3F5017E57F6503B63CC85 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,7 +240,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B17D9211A1837630071A429 /* Main.storyboard in Resources */,
 				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
 				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
 			);
@@ -214,14 +254,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D91E76F9C6FB5F40BDE0BC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CFD3F5017E57F6503B63CC85 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B17D90E1A1837630071A429 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B17D91E1A1837630071A429 /* ViewController.m in Sources */,
+				3B7D4E811A2071BF00FDCFB3 /* DEMOLeftMenuViewController.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
+				3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */,
 				3B17D9181A1837630071A429 /* main.m in Sources */,
+				3B7D4E851A2071E100FDCFB3 /* DEMORightMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +319,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3B17D91F1A1837630071A429 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B17D9201A1837630071A429 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B17D9241A1837630071A429 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,6 +410,7 @@
 		};
 		3B17D9361A1837630071A429 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CelebDuel/Info.plist;
@@ -353,6 +421,7 @@
 		};
 		3B17D9371A1837630071A429 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CelebDuel/Info.plist;
@@ -414,6 +483,7 @@
 				3B17D9371A1837630071A429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B17D9381A1837630071A429 /* Build configuration list for PBXNativeTarget "CelebDuelTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +492,7 @@
 				3B17D93A1A1837630071A429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

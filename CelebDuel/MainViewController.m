@@ -30,8 +30,6 @@ static NSString *CellIdentifier = @"Cell Identifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
     self.addFunds = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
     
     self.upComingEvent = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"upcoming"] style:UIBarButtonItemStylePlain target:self action:@selector(upcomingEventFired:)];
@@ -45,12 +43,6 @@ static NSString *CellIdentifier = @"Cell Identifier";
     
     NSArray *itemsArray = [NSArray arrayWithObjects:_addFunds,flexButton, _upComingEvent,flexButton,_liveEvent,flexButton,_history, nil];
     
-    
-    
-    
-
-    
-
     
     
     

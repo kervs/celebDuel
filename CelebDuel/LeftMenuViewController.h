@@ -1,5 +1,5 @@
 //
-//  DEMOMenuViewController.h
+//  MenuViewController.h
 //  RESideMenuExample
 //
 //  Created by Roman Efimov on 10/10/13.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
 
-@interface DEMOLeftMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LeftMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

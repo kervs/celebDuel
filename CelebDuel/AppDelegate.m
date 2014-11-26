@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "DEMOLeftMenuViewController.h"
-#import "DEMORightMenuViewController.h"
+#import "LeftMenuViewController.h"
+#import "RightMenuViewController.h"
 
 
 
@@ -24,8 +24,8 @@
     // Override point for customization after application launch.
      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
        UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-    DEMOLeftMenuViewController *leftMenuViewController = [[DEMOLeftMenuViewController alloc] init];
-    DEMORightMenuViewController *rightMenuViewController = [[DEMORightMenuViewController alloc] init];
+    LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
+    RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
     
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
                                                                     leftMenuViewController:leftMenuViewController

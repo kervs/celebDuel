@@ -1,5 +1,5 @@
 //
-//  DEMORightMenuViewController.h
+//  RightMenuViewController.h
 //  RESideMenuExample
 //
 //  Created by Roman Efimov on 2/11/14.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
 
-@interface DEMORightMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RightMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

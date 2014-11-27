@@ -59,6 +59,16 @@
 		3BBE36501A26747600BC26CE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3BBE36521A267BDE00BC26CE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		3BBE36531A267BDE00BC26CE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		3BBE365E1A268DCC00BC26CE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3BBE36601A268DD500BC26CE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3BBE36621A268DEA00BC26CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3BBE36641A268DF200BC26CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3BBE36661A268E0B00BC26CE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3BBE36681A268E1E00BC26CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3BBE366A1A268E2A00BC26CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3BBE366C1A268E3200BC26CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3BBE366E1A268E3C00BC26CE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3BBE36701A268E5400BC26CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CelebDuel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.debug.xcconfig"; sourceTree = "<group>"; };
 		EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +185,16 @@
 		49CCB4A942B62240D59804EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BBE36701A268E5400BC26CE /* SystemConfiguration.framework */,
+				3BBE366E1A268E3C00BC26CE /* StoreKit.framework */,
+				3BBE366C1A268E3200BC26CE /* Security.framework */,
+				3BBE366A1A268E2A00BC26CE /* QuartzCore.framework */,
+				3BBE36681A268E1E00BC26CE /* MobileCoreServices.framework */,
+				3BBE36661A268E0B00BC26CE /* libz.dylib */,
+				3BBE36641A268DF200BC26CE /* CoreLocation.framework */,
+				3BBE36621A268DEA00BC26CE /* CoreGraphics.framework */,
+				3BBE36601A268DD500BC26CE /* CFNetwork.framework */,
+				3BBE365E1A268DCC00BC26CE /* AudioToolbox.framework */,
 				43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */,
 			);
 			name = Frameworks;
@@ -254,6 +274,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 3B17D9091A1837630071A429;
 			productRefGroup = 3B17D9131A1837630071A429 /* Products */;
@@ -449,9 +470,18 @@
 			baseConfigurationReference = 43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0/FacebookSDK",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/CelebDuel/FacebookSDK",
+					"$(PROJECT_DIR)/CelebDuel/FacebookSDK/FBAudienceNetwork",
+				);
 				INFOPLIST_FILE = CelebDuel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,9 +490,18 @@
 			baseConfigurationReference = EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0/FacebookSDK",
+					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/CelebDuel/FacebookSDK",
+					"$(PROJECT_DIR)/CelebDuel/FacebookSDK/FBAudienceNetwork",
+				);
 				INFOPLIST_FILE = CelebDuel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

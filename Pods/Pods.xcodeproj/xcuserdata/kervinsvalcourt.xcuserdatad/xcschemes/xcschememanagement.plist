@@ -4,6 +4,26 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-CelebDuel-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CelebDuel-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CelebDuel-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CelebDuel-ParseFacebookUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CelebDuel-RESideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A5A8B9E0191251DCA97AF1AC</key>
+		<key>2C877F11029770DADD071B09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3DE7706183B1183D172023E</key>
+		<key>4750163CF08B9594A7D03E9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73F913405ACEEAD3AFCEB31F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76516AE2D1413E097177A223</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>954836C1C88D73F9FCA43D5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7E804CF34846936E8B2D64F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

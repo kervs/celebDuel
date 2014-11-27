@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "LeftMenuViewController.h"
 #import "RightMenuViewController.h"
+#import <Parse/Parse.h>
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    PFUser *user = [PFUser currentUser];
+    
 }
 
 - (IBAction)signUpFired:(UIButton *)sender {
@@ -44,8 +50,9 @@
     sideMenuViewController.contentViewShadowRadius = 12;
     sideMenuViewController.contentViewShadowEnabled = YES;
     //self.window.rootViewController = sideMenuViewController;
+
     
-    
+    [[PFUser currentUser]saveInBackground];
     
     [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
 

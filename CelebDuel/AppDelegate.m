@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
-#import "LeftMenuViewController.h"
-#import "RightMenuViewController.h"
+#import <Parse/Parse.h>
 
 
 
@@ -21,11 +19,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+    
+    [Parse setApplicationId:@"0e3YLZ108fUvdIXaaurjcSVmY0zRROAieiuQ2LwU"
+                  clientKey:@"EUXFiDdUGIJao11NNWQepHbCciLrPitVlTFQCPHu"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
        return YES;
 }

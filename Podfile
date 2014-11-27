@@ -5,6 +5,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'CelebDuel' do
     pod 'RESideMenu', '~> 4.0.7'
+    pod 'Parse'
+    pod 'Facebook-iOS-SDK'
+    pod 'ParseFacebookUtils'
 
 end
 

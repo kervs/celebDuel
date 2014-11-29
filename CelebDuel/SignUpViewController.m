@@ -12,12 +12,15 @@
 #import "RightMenuViewController.h"
 #import <Parse/Parse.h>
 
-@interface SignUpViewController ()
+@interface SignUpViewController () {
+    BOOL checked;
+}
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UITextField *retypePasswordField;
+@property (weak, nonatomic) IBOutlet UIButton *checkBoxButton;
+
 
 @end
 
@@ -26,12 +29,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    checked = NO;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    PFUser *user = [PFUser currentUser];
+- (IBAction)checkBoxFired:(UIButton *)sender {
+    if (!checked) {
+        [_checkBoxButton setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
+        checked = YES;
+    }
     
+    else if (checked) {
+        [_checkBoxButton setImage:[UIImage imageNamed:@"checkBox.png"] forState:UIControlStateNormal];
+        checked = NO;
+    }
 }
+
+
 
 - (IBAction)signUpFired:(UIButton *)sender {
     UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
@@ -51,10 +64,29 @@
     sideMenuViewController.contentViewShadowEnabled = YES;
     //self.window.rootViewController = sideMenuViewController;
 
+   
     
-    [[PFUser currentUser]saveInBackground];
+    PFUser *user = [PFUser user];
+    user.username = @"carlos is super gay";
+    user.password = @"carlos has a small dick";
+    user.email = @"email@example.com";
+    user[@"gender"] = @"m";
+    user[@"birthday"] = @"june";
     
-    [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+            [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+            
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog(@"%@",errorString);
+        }
+    }];
+    
+    
 
 }
 

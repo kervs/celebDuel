@@ -12,7 +12,7 @@
 #import "RightMenuViewController.h"
 #import <Parse/Parse.h>
 
-@interface SignUpViewController () {
+@interface SignUpViewController () <UITextFieldDelegate>{
     BOOL checked;
 }
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -30,6 +30,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     checked = NO;
+    _nameField.delegate = self;
+    _nameField.returnKeyType = UIReturnKeyNext;
+    _emailField.delegate = self;
+    _emailField.returnKeyType = UIReturnKeyNext;
+    _usernameField.delegate = self;
+    _usernameField.returnKeyType = UIReturnKeyNext;
+    _passwordField.delegate = self;
+    
+
 }
 
 - (IBAction)checkBoxFired:(UIButton *)sender {
@@ -64,14 +73,58 @@
     sideMenuViewController.contentViewShadowEnabled = YES;
     //self.window.rootViewController = sideMenuViewController;
 
-   
-    
     PFUser *user = [PFUser user];
-    user.username = @"carlos is super gay";
-    user.password = @"carlos has a small dick";
-    user.email = @"email@example.com";
-    user[@"gender"] = @"m";
-    user[@"birthday"] = @"june";
+    if([_usernameField.text isEqualToString:@""]) {
+        // textField is empty
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message: @"Username Missing"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles: nil];
+        [alert show];
+
+    } else{
+    user.username = _usernameField.text;
+    }
+    if([_nameField.text isEqualToString:@""]) {
+        // textField is empty
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message: @"Full Name Missing"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles: nil];
+        [alert show];
+        
+    } else{
+    user[@"fullName"] = _nameField.text;
+    }
+    
+    user[@"legalAge"] = [NSNumber numberWithBool:checked];
+    if([_passwordField.text isEqualToString:@""]) {
+        // textField is empty
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message: @"Password Missing"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles: nil];
+        [alert show];
+        
+    } else{
+    user.password = _passwordField.text;
+    }
+    if([_emailField.text isEqualToString:@""]) {
+        // textField is empty
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message: @"Email Missing"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles: nil];
+        [alert show];
+        
+    } else{
+    user.email = _emailField.text.lowercaseString;
+    
+    }
     
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -82,12 +135,51 @@
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
+            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                             message: [NSString stringWithFormat: @"%@",errorString]
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancel"
+                                                   otherButtonTitles: nil];
+            [alert show];
+            
             NSLog(@"%@",errorString);
+            
+            
         }
     }];
     
-    
 
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == _nameField) {
+        [_emailField becomeFirstResponder];
+    }
+    else if (textField == _emailField) {
+        [ _usernameField becomeFirstResponder];
+    }
+    else if (textField == _usernameField) {
+        [ _passwordField becomeFirstResponder];
+    }
+    
+    else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+
+
 
 @end

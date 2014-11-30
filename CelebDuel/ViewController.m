@@ -7,16 +7,49 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
+#import "MainViewController.h"
+#import "LeftMenuViewController.h"
+#import "RightMenuViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <RESideMenuDelegate>
 
 @end
 
 @implementation ViewController
 
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PFUser *user = [PFUser currentUser];
+    if (user.username != nil) {
+        
+        UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+        LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
+        RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
+        
+        RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
+                                                                        leftMenuViewController:leftMenuViewController
+                                                                       rightMenuViewController:rightMenuViewController];
+        sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+        sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+        sideMenuViewController.delegate = self;
+        sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+        sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+        sideMenuViewController.contentViewShadowOpacity = 0.6;
+        sideMenuViewController.contentViewShadowRadius = 12;
+        sideMenuViewController.contentViewShadowEnabled = YES;
+        
+        [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+        
+        
+        
+    }
+
     
     _pageTitles = @[@"Testing Testing", @"Test2", @"Test3", @"Test4"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
@@ -96,11 +129,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startWalkthrough:(id)sender
-{
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-}
+
 
 @end

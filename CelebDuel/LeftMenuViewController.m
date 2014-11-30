@@ -8,6 +8,8 @@
 
 #import "LeftMenuViewController.h"
 #import "MainViewController.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 
 @interface LeftMenuViewController ()
@@ -48,13 +50,14 @@
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
-        case 1:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]]
-                                                         animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
+        case 4:
+            [PFUser logOut];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"startview"];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+            
             break;
-        default:
-            break;
+        
     }
 }
 

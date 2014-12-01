@@ -260,6 +260,7 @@
 				TargetAttributes = {
 					3B17D9111A1837630071A429 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = Y7773C39R6;
 					};
 					3B17D92A1A1837630071A429 = {
 						CreatedOnToolsVersion = 6.1;
@@ -470,6 +471,8 @@
 			baseConfigurationReference = 43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0",
@@ -481,6 +484,7 @@
 				INFOPLIST_FILE = CelebDuel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -490,6 +494,8 @@
 			baseConfigurationReference = EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CelebDuel/parse-library-1.5.0",
@@ -501,6 +507,7 @@
 				INFOPLIST_FILE = CelebDuel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

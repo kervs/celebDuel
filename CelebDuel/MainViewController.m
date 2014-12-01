@@ -17,9 +17,7 @@
 @property (nonatomic,strong)UICollectionView *collectionView;
 @property (nonatomic,strong)UIBarButtonItem *addFunds;
 @property (nonatomic,strong)UIBarButtonItem *menuButton;
-@property (nonatomic,strong)UIBarButtonItem *upComingEvent;
-@property (nonatomic,strong)UIBarButtonItem *liveEvent;
-@property (nonatomic,strong)UIBarButtonItem *history;
+@property (nonatomic,strong)UIBarButtonItem *viewEvents;
 @property (nonatomic,strong)UIBarButtonItem *filters;
 @end
 
@@ -30,18 +28,15 @@ static NSString *CellIdentifier = @"Cell Identifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.addFunds = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
+    self.addFunds = [[UIBarButtonItem alloc]initWithTitle:@"Add Funds"style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
     
-    self.upComingEvent = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"upcoming"] style:UIBarButtonItemStylePlain target:self action:@selector(upcomingEventFired:)];
+    self.viewEvents = [[UIBarButtonItem alloc]initWithTitle:@"View Events" style:UIBarButtonItemStylePlain target:self action:@selector(upcomingEventFired:)];
     
-    self.liveEvent = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"live"] style:UIBarButtonItemStylePlain target:self action:@selector(liveEventFired:)];
-    
-    self.history = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"history"] style:UIBarButtonItemStylePlain target:self action:@selector(historyEventFired:)];
     
      UIBarButtonItem *flexButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
     
-    NSArray *itemsArray = [NSArray arrayWithObjects:_addFunds,flexButton, _upComingEvent,flexButton,_liveEvent,flexButton,_history, nil];
+    NSArray *itemsArray = [NSArray arrayWithObjects:flexButton,_addFunds,flexButton, _viewEvents,flexButton, nil];
     
     
     

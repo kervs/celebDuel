@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AddFunds.h"
 
 
 @interface MainViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -93,6 +94,10 @@ static NSString *CellIdentifier = @"Cell Identifier";
 
 #pragma mark - buttons
 
+- (void)addFundsFired:(id)sender {
+    AddFunds *fundsView = [[AddFunds alloc]init];
+    [self presentViewController:fundsView animated:YES completion:nil];
+}
 
 #pragma mark - UICollectionViewDataSource Methods
 

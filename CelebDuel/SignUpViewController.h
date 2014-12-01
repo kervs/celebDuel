@@ -10,6 +10,5 @@
 #import "RESideMenu.h"
 
 @interface SignUpViewController : UIViewController<RESideMenuDelegate>
-//Another test ya'll
 
 @end

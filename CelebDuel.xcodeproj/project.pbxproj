@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */; };
+		1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */; };
+		1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */; };
+		1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */; };
 		3B17D9181A1837630071A429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9171A1837630071A429 /* main.m */; };
 		3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91A1A1837630071A429 /* AppDelegate.m */; };
 		3B17D9231A1837630071A429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9221A1837630071A429 /* Images.xcassets */; };
@@ -34,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFunds.h; sourceTree = "<group>"; };
+		1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFunds.m; sourceTree = "<group>"; };
+		1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFunds.xib; sourceTree = "<group>"; };
+		1B598AC11A2C11BE00A1E5C5 /* CreditCardInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardInfoView.h; sourceTree = "<group>"; };
+		1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardInfoView.m; sourceTree = "<group>"; };
+		1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardInfoView.xib; sourceTree = "<group>"; };
 		3B17D9121A1837630071A429 /* CelebDuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelebDuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B17D9161A1837630071A429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B17D9171A1837630071A429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +103,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B598ABD1A2C10BA00A1E5C5 /* AddFunds */ = {
+			isa = PBXGroup;
+			children = (
+				1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */,
+				1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */,
+				1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */,
+				1B598AC11A2C11BE00A1E5C5 /* CreditCardInfoView.h */,
+				1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */,
+				1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */,
+			);
+			name = AddFunds;
+			sourceTree = "<group>";
+		};
 		3B17D9091A1837630071A429 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +141,7 @@
 			children = (
 				3BBE36341A2641A700BC26CE /* Intro View */,
 				3B2CA71A1A203725004B2AD7 /* MainView */,
+				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
 				3B17D9191A1837630071A429 /* AppDelegate.h */,
 				3B17D91A1A1837630071A429 /* AppDelegate.m */,
 				3B17D9221A1837630071A429 /* Images.xcassets */,
@@ -295,7 +319,9 @@
 			files = (
 				3BBE364E1A2671DE00BC26CE /* Main.storyboard in Resources */,
 				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
+				1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */,
 				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
+				1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,11 +376,13 @@
 				3BBE364C1A2671DE00BC26CE /* ViewController.m in Sources */,
 				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,
 				3BBE364D1A2671DE00BC26CE /* PageContentViewController.m in Sources */,
+				1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
 				3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */,
 				3B17D9181A1837630071A429 /* main.m in Sources */,
 				3B7D4E851A2071E100FDCFB3 /* RightMenuViewController.m in Sources */,
 				3BBE36541A267BDE00BC26CE /* SignUpViewController.m in Sources */,
+				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

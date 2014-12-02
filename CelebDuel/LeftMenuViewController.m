@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
+#import "AddFunds.h"
 
 
 @interface LeftMenuViewController ()
@@ -50,6 +51,13 @@
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+            
+        case 1:
+        { AddFunds *fundsView = [[AddFunds alloc]init];
+            [self presentViewController:fundsView animated:YES completion:nil];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+        }
         case 4:
             [PFUser logOut];
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

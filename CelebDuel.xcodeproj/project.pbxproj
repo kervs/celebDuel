@@ -142,6 +142,7 @@
 				3BBE36341A2641A700BC26CE /* Intro View */,
 				3B2CA71A1A203725004B2AD7 /* MainView */,
 				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
+				3BD8CD2C1A32BAA9004618EB /* Models */,
 				3B17D9191A1837630071A429 /* AppDelegate.h */,
 				3B17D91A1A1837630071A429 /* AppDelegate.m */,
 				3B17D9221A1837630071A429 /* Images.xcassets */,
@@ -204,6 +205,13 @@
 				3BBE364B1A2671DE00BC26CE /* Main.storyboard */,
 			);
 			name = "Intro View";
+			sourceTree = "<group>";
+		};
+		3BD8CD2C1A32BAA9004618EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		49CCB4A942B62240D59804EB /* Frameworks */ = {

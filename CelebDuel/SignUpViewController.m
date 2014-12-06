@@ -132,6 +132,29 @@
             // Hooray! Let them use the app now.
             [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
             
+            [PFCloud callFunctionInBackground:@"sendWelcomeEmail"
+                               withParameters:@{}
+                                        block:^(NSString *result, NSError *error) {
+                                            if (!error) {
+                                                // result is @"Hello world!"
+                                                NSLog(@"%@",result);
+                                            
+                                                
+                                            } else {
+                                                NSString *errorString = [error userInfo][@"error"];
+                                                // Show the errorString somewhere and let the user try again.
+                                                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                                                                 message: [NSString stringWithFormat: @"%@",errorString]
+                                                                                                delegate:self
+                                                                                       cancelButtonTitle:@"Cancel"
+                                                                                       otherButtonTitles: nil];
+                                                [alert show];
+                                                
+
+                                                
+                                            }
+                                        }];
+            
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.

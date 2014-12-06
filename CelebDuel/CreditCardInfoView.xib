@@ -8,6 +8,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditCardInfoView">
             <connections>
+                <outlet property="billingInfoName" destination="O8N-kl-jA6" id="KPe-8d-NxB"/>
+                <outlet property="billingInfoState" destination="BzP-A1-sRv" id="Q6B-Rl-hx8"/>
+                <outlet property="billingInfoZipCode" destination="IM8-8W-7WL" id="akW-U7-Ska"/>
+                <outlet property="cardNumber" destination="iaR-tk-CRE" id="TgO-ox-B6F"/>
+                <outlet property="expMonth" destination="8GG-S6-Af9" id="t45-Ua-0qN"/>
+                <outlet property="expYear" destination="An1-Zf-oH9" id="eVz-GV-LZu"/>
+                <outlet property="securityCode" destination="5KV-V3-1P0" id="VTd-3j-wg9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -88,6 +95,15 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-KS-P5H">
+                    <rect key="frame" x="37" y="321" width="70" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="1pf-gQ-hlh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iaR-tk-CRE">
                     <rect key="frame" x="135" y="98" width="165" height="30"/>
                     <constraints>
@@ -126,15 +142,38 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-KS-P5H">
-                    <rect key="frame" x="37" y="321" width="70" height="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbn-Op-VnZ">
+                    <rect key="frame" x="246" y="394" width="108" height="30"/>
+                    <color key="backgroundColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="1pf-gQ-hlh"/>
+                        <constraint firstAttribute="width" constant="108" id="FlD-0y-GZL"/>
+                        <constraint firstAttribute="height" constant="30" id="gMA-wz-gH1"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="tintColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
+                    <state key="normal" title="Deposit Funds">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="depositFunds:" destination="-1" eventType="touchUpInside" id="LGQ-sB-3d9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmt-wp-8pv">
+                    <rect key="frame" x="238" y="449" width="125" height="30"/>
+                    <color key="backgroundColor" red="0.19469186029999999" green="0.097203331599999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0Vo-Px-NWf"/>
+                        <constraint firstAttribute="width" constant="125" id="tdC-bG-g4Q"/>
+                    </constraints>
+                    <color key="tintColor" red="0.19469186029999999" green="0.097203331599999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Scan Credit Card">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="scanCreditCard:" destination="-1" eventType="touchUpInside" id="Zqp-gh-Dxb"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -143,6 +182,7 @@
                 <constraint firstItem="SpK-Kv-8xH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Su-Ti-HIJ"/>
                 <constraint firstItem="An1-Zf-oH9" firstAttribute="top" secondItem="iaR-tk-CRE" secondAttribute="bottom" constant="28" id="6P3-C7-4Fx"/>
                 <constraint firstItem="j8c-KS-P5H" firstAttribute="leading" secondItem="Ru7-D3-Zt8" secondAttribute="leading" id="7G4-DH-EFp"/>
+                <constraint firstItem="Vmt-wp-8pv" firstAttribute="centerX" secondItem="Rbn-Op-VnZ" secondAttribute="centerX" id="7PA-hb-PHZ"/>
                 <constraint firstItem="iaR-tk-CRE" firstAttribute="trailing" secondItem="BzP-A1-sRv" secondAttribute="trailing" id="7rl-9t-5tO"/>
                 <constraint firstItem="89c-s8-Gsh" firstAttribute="top" secondItem="AwH-Ht-K7C" secondAttribute="bottom" constant="28" id="7wV-Pb-Jae"/>
                 <constraint firstItem="mDZ-eh-VVE" firstAttribute="top" secondItem="g3V-6Q-Jdk" secondAttribute="bottom" constant="8" symbolic="YES" id="8ao-Xm-Jro"/>
@@ -166,6 +206,7 @@
                 <constraint firstItem="PSI-pP-zpr" firstAttribute="top" secondItem="SpK-Kv-8xH" secondAttribute="bottom" constant="29" id="Vag-to-mvS"/>
                 <constraint firstItem="g3V-6Q-Jdk" firstAttribute="leading" secondItem="zqf-tg-gcd" secondAttribute="leading" id="WOX-ZL-qjo"/>
                 <constraint firstItem="iaR-tk-CRE" firstAttribute="trailing" secondItem="5KV-V3-1P0" secondAttribute="trailing" id="WbU-ah-W0k"/>
+                <constraint firstItem="Vmt-wp-8pv" firstAttribute="top" secondItem="Rbn-Op-VnZ" secondAttribute="bottom" constant="25" id="Xa4-r1-tnW"/>
                 <constraint firstItem="iaR-tk-CRE" firstAttribute="leading" secondItem="An1-Zf-oH9" secondAttribute="leading" id="Z6v-b1-5SF"/>
                 <constraint firstItem="iaR-tk-CRE" firstAttribute="trailing" secondItem="An1-Zf-oH9" secondAttribute="trailing" id="aKY-02-McG"/>
                 <constraint firstItem="g3V-6Q-Jdk" firstAttribute="leading" secondItem="AwH-Ht-K7C" secondAttribute="leading" id="aaH-6a-RvL"/>
@@ -179,9 +220,11 @@
                 <constraint firstItem="gzk-Ou-ZSl" firstAttribute="leading" secondItem="Ru7-D3-Zt8" secondAttribute="leading" id="hWY-oh-QKc"/>
                 <constraint firstItem="PSI-pP-zpr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="hsW-AQ-JVr"/>
                 <constraint firstItem="IM8-8W-7WL" firstAttribute="top" secondItem="O8N-kl-jA6" secondAttribute="bottom" constant="28" id="hwD-qO-1Ey"/>
+                <constraint firstItem="Rbn-Op-VnZ" firstAttribute="top" secondItem="IM8-8W-7WL" secondAttribute="bottom" constant="44" id="i5j-Le-Rju"/>
                 <constraint firstItem="8GG-S6-Af9" firstAttribute="top" secondItem="SpK-Kv-8xH" secondAttribute="bottom" constant="83" id="jcK-hC-YPm"/>
                 <constraint firstItem="j8c-KS-P5H" firstAttribute="leading" secondItem="AwH-Ht-K7C" secondAttribute="leading" id="jeC-Gt-lKv"/>
                 <constraint firstItem="PSI-pP-zpr" firstAttribute="trailing" secondItem="89c-s8-Gsh" secondAttribute="trailing" id="jyZ-3V-YtV"/>
+                <constraint firstItem="Rbn-Op-VnZ" firstAttribute="centerX" secondItem="SpK-Kv-8xH" secondAttribute="centerX" id="kCH-bV-ki9"/>
                 <constraint firstItem="BzP-A1-sRv" firstAttribute="top" secondItem="5KV-V3-1P0" secondAttribute="bottom" constant="77" id="lbB-bq-u48"/>
                 <constraint firstItem="zqf-tg-gcd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="pcj-8h-f9r"/>
                 <constraint firstItem="g3V-6Q-Jdk" firstAttribute="top" secondItem="PSI-pP-zpr" secondAttribute="bottom" constant="8" symbolic="YES" id="pmB-Qc-rWm"/>

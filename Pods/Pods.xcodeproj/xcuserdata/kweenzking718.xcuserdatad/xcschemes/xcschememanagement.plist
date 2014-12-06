@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-CelebDuel-CardIO.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-CelebDuel-Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,7 +42,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0DE7F2B60B96DF9D15E12C45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C877F11029770DADD071B09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>309A03B4D008E28B5CE18F79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4577A17EEF9EC3EAE49143A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +77,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>822246FF0E8F86A120C7A71B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>954836C1C88D73F9FCA43D5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>972EC5C20B2468703E890093</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B20BC46D69F6EE5CF8431822</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B7E804CF34846936E8B2D64F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5B710C00B7443D81B42E1A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

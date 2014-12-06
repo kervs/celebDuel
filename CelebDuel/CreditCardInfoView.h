@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreditCardInfoView : UIViewController
+@interface CreditCardInfoView : UIViewController 
 
 @end

@@ -11,6 +11,8 @@
 
 @interface AddFunds ()
 
+@property (strong,nonatomic) NSArray *theStates;
+
 @end
 
 @implementation AddFunds

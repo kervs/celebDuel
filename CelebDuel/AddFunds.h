@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *statesTextField;
 
-@property (strong,nonatomic) NSArray *theStates;
-
 @property (strong, nonatomic) IBOutlet UITextField *depositAmountTextField;
 
 - (IBAction)creditCard:(id)sender;

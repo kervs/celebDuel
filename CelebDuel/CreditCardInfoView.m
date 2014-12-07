@@ -7,8 +7,9 @@
 //
 
 #import "CreditCardInfoView.h"
+#import "CardIO.h"
 
-@interface CreditCardInfoView () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
+@interface CreditCardInfoView () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate,CardIOPaymentViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *cardNumber;
 @property (strong, nonatomic) IBOutlet UITextField *expMonth;
@@ -54,6 +55,11 @@
     picker.delegate = self;
     self.billingInfoState.inputView = picker;
     self.theStates = @[@"Alabama", @"Alaska", @"American Samoa", @"Arizona", @"Arkansas", @"California", @"Colorado", @"Connecticut", @"Delaware", @"District of Columbia", @"Florida", @"Georgia", @"Hawaii", @"Idaho", @"Illinois", @"Indiana", @"Iowa", @"Kansas", @"Kentucky", @"Louisiana", @"Maine", @"Maryland", @"Massachusetts", @"Michigan", @"Minnesota", @"Mississippi", @"Missouri", @"Montana", @"Nebraska", @"Nevada", @"New Hampshire", @"New Jersey", @"New Mexico", @"New York", @"North Carolina", @"North Dakota", @"Ohio", @"Oklahoma", @"Oregon", @"Pennsylvania", @"Puerto Rico", @"Rhode Island", @"South Carolina", @"South Dakota", @"Tennessee", @"Texas", @"Utah", @"Vermont", @"Virgin Islands", @"Virgina", @"Washington", @"West Virgina", @"Wisconsin",@"Wyoming",];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [CardIOUtilities preload];
 }
 
 //Cancel Button
@@ -124,8 +130,22 @@
 - (IBAction)scanCreditCard:(id)sender {
 
    //SCAN CREDIT CARD STUFF HERE?
+    CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+    [self presentViewController:scanViewController animated:YES completion:nil];
     
 }
 
+- (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController {
+    NSLog(@"User canceled payment info");
+    // Handle user cancellation here...
+    [scanViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController {
+    // The full card number is available as info.cardNumber, but don't log that!
+    NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.redactedCardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
+    // Use the card info...
+    [scanViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

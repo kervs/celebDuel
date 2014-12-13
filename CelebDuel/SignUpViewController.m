@@ -15,12 +15,15 @@
 @interface SignUpViewController () <UITextFieldDelegate>{
     BOOL checked;
 }
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIButton *checkBoxButton;
-
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *usernameField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordField;
+@property (strong, nonatomic) IBOutlet UIButton *checkBoxButton;
+@property (strong,nonatomic) UINavigationController *navCon;
+@property (strong,nonatomic) LeftMenuViewController *leftMenuViewController;
+@property (strong,nonatomic) RightMenuViewController *rightMenuViewController;
+@property (strong,nonatomic) RESideMenu *sideMenuViewController;
 
 @end
 
@@ -56,122 +59,82 @@
 
 
 - (IBAction)signUpFired:(UIButton *)sender {
-    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-    LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
-    RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
-    
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
-                                                                    leftMenuViewController:leftMenuViewController
-                                                                   rightMenuViewController:rightMenuViewController];
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
-    sideMenuViewController.delegate = self;
-    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    sideMenuViewController.contentViewShadowOpacity = 0.6;
-    sideMenuViewController.contentViewShadowRadius = 12;
-    sideMenuViewController.contentViewShadowEnabled = YES;
-    //self.window.rootViewController = sideMenuViewController;
-
     PFUser *user = [PFUser user];
-    if([_usernameField.text isEqualToString:@""]) {
-        // textField is empty
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                         message: @"Username Missing"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles: nil];
-        [alert show];
-
-    } else{
-    user.username = _usernameField.text;
-    }
-    if([_nameField.text isEqualToString:@""]) {
-        // textField is empty
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                         message: @"Full Name Missing"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles: nil];
-        [alert show];
-        
-    } else{
-    user[@"fullName"] = _nameField.text;
-    }
+    user.username = self.usernameField.text;
+    user.password = self.passwordField.text;
     
+    if ([self.passwordField.text isEqualToString:@""]) {
+        [self displayAlertView:@"Missing Password"];
+        return;
+    } else if(self.passwordField.text.length <= 6)
+    {
+        [self displayAlertView:@"Needs to be aleast 6 characters"];
+        return;
+    } else if(![self.passwordField.text isEqualToString:@""] && self.passwordField.text.length >= 6 ) {
+        user.password = self.passwordField.text;
+    }
+    user.email = self.emailField.text;
     user[@"legalAge"] = [NSNumber numberWithBool:checked];
-    if([_passwordField.text isEqualToString:@""]) {
-        // textField is empty
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                         message: @"Password Missing"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles: nil];
-        [alert show];
-        
-    } else{
-    user.password = _passwordField.text;
-    }
-    if([_emailField.text isEqualToString:@""]) {
-        // textField is empty
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                         message: @"Email Missing"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles: nil];
-        [alert show];
-        
-    } else{
-    user.email = _emailField.text.lowercaseString;
-    
-    }
-    
+    user[@"fullName"] = _nameField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
-            [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+            [self createMainView];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:_sideMenuViewController];
             
             [PFCloud callFunctionInBackground:@"sendWelcomeEmail"
                                withParameters:@{}
                                         block:^(NSString *result, NSError *error) {
                                             if (!error) {
-                                                // result is @"Hello world!"
                                                 NSLog(@"%@",result);
-                                            
                                                 
                                             } else {
                                                 NSString *errorString = [error userInfo][@"error"];
                                                 // Show the errorString somewhere and let the user try again.
-                                                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                                                                 message: [NSString stringWithFormat: @"%@",errorString]
-                                                                                                delegate:self
-                                                                                       cancelButtonTitle:@"Cancel"
-                                                                                       otherButtonTitles: nil];
-                                                [alert show];
-                                                
-
+                                                [self displayAlertView:[NSString stringWithFormat: @"%@",errorString]];
                                                 
                                             }
                                         }];
             
         } else {
             NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                             message: [NSString stringWithFormat: @"%@",errorString]
-                                                            delegate:self
-                                                   cancelButtonTitle:@"Cancel"
-                                                   otherButtonTitles: nil];
-            [alert show];
-            
-            NSLog(@"%@",errorString);
+            [self displayAlertView:[NSString stringWithFormat: @"%@",errorString]];
             
             
         }
     }];
     
 
+}
+
+- (void)createMainView {
+    _navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+    _leftMenuViewController = [[LeftMenuViewController alloc] init];
+    _rightMenuViewController = [[RightMenuViewController alloc] init];
+    
+    _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_navCon
+                                                                    leftMenuViewController:_leftMenuViewController
+                                                                   rightMenuViewController:_rightMenuViewController];
+    _sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    _sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    _sideMenuViewController.delegate = self;
+    _sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    _sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    _sideMenuViewController.contentViewShadowOpacity = 0.6;
+    _sideMenuViewController.contentViewShadowRadius = 12;
+    _sideMenuViewController.contentViewShadowEnabled = YES;
+
+    
+}
+
+- (void)displayAlertView:(NSString *)message{
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                     message: message
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert show];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField

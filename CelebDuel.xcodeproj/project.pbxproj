@@ -121,9 +121,9 @@
 			children = (
 				3B17D9141A1837630071A429 /* CelebDuel */,
 				3B17D92E1A1837630071A429 /* CelebDuelTests */,
-				3B17D9131A1837630071A429 /* Products */,
-				584E2EFB7EC4E70738F9FCD5 /* Pods */,
 				49CCB4A942B62240D59804EB /* Frameworks */,
+				584E2EFB7EC4E70738F9FCD5 /* Pods */,
+				3B17D9131A1837630071A429 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,15 +139,15 @@
 		3B17D9141A1837630071A429 /* CelebDuel */ = {
 			isa = PBXGroup;
 			children = (
+				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
 				3BBE36341A2641A700BC26CE /* Intro View */,
 				3B2CA71A1A203725004B2AD7 /* MainView */,
-				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
 				3BD8CD2C1A32BAA9004618EB /* Models */,
+				3B17D9151A1837630071A429 /* Supporting Files */,
 				3B17D9191A1837630071A429 /* AppDelegate.h */,
 				3B17D91A1A1837630071A429 /* AppDelegate.m */,
 				3B17D9221A1837630071A429 /* Images.xcassets */,
 				3B17D9241A1837630071A429 /* LaunchScreen.xib */,
-				3B17D9151A1837630071A429 /* Supporting Files */,
 			);
 			path = CelebDuel;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 		3B17D92E1A1837630071A429 /* CelebDuelTests */ = {
 			isa = PBXGroup;
 			children = (
-				3B17D9311A1837630071A429 /* CelebDuelTests.m */,
 				3B17D92F1A1837630071A429 /* Supporting Files */,
+				3B17D9311A1837630071A429 /* CelebDuelTests.m */,
 			);
 			path = CelebDuelTests;
 			sourceTree = "<group>";
@@ -181,10 +181,10 @@
 		3B2CA71A1A203725004B2AD7 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				3B17D93B1A18385F0071A429 /* MainViewController.h */,
-				3B17D93C1A18385F0071A429 /* MainViewController.m */,
 				3B7D4E821A2071D400FDCFB3 /* LeftMenuViewController.h */,
 				3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */,
+				3B17D93B1A18385F0071A429 /* MainViewController.h */,
+				3B17D93C1A18385F0071A429 /* MainViewController.m */,
 				3B7D4E831A2071E100FDCFB3 /* RightMenuViewController.h */,
 				3B7D4E841A2071E100FDCFB3 /* RightMenuViewController.m */,
 			);
@@ -196,13 +196,13 @@
 			children = (
 				3BBE364F1A26747600BC26CE /* LoginViewController.h */,
 				3BBE36501A26747600BC26CE /* LoginViewController.m */,
-				3BBE36521A267BDE00BC26CE /* SignUpViewController.h */,
-				3BBE36531A267BDE00BC26CE /* SignUpViewController.m */,
-				3BBE36471A2671DE00BC26CE /* PageViewController.h */,
-				3BBE36481A2671DE00BC26CE /* PageViewController.m */,
+				3BBE364B1A2671DE00BC26CE /* Main.storyboard */,
 				3BBE36491A2671DE00BC26CE /* PageContentViewController.h */,
 				3BBE364A1A2671DE00BC26CE /* PageContentViewController.m */,
-				3BBE364B1A2671DE00BC26CE /* Main.storyboard */,
+				3BBE36471A2671DE00BC26CE /* PageViewController.h */,
+				3BBE36481A2671DE00BC26CE /* PageViewController.m */,
+				3BBE36521A267BDE00BC26CE /* SignUpViewController.h */,
+				3BBE36531A267BDE00BC26CE /* SignUpViewController.m */,
 			);
 			name = "Intro View";
 			sourceTree = "<group>";
@@ -217,17 +217,17 @@
 		49CCB4A942B62240D59804EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3BBE36701A268E5400BC26CE /* SystemConfiguration.framework */,
-				3BBE366E1A268E3C00BC26CE /* StoreKit.framework */,
-				3BBE366C1A268E3200BC26CE /* Security.framework */,
-				3BBE366A1A268E2A00BC26CE /* QuartzCore.framework */,
-				3BBE36681A268E1E00BC26CE /* MobileCoreServices.framework */,
-				3BBE36661A268E0B00BC26CE /* libz.dylib */,
-				3BBE36641A268DF200BC26CE /* CoreLocation.framework */,
-				3BBE36621A268DEA00BC26CE /* CoreGraphics.framework */,
-				3BBE36601A268DD500BC26CE /* CFNetwork.framework */,
 				3BBE365E1A268DCC00BC26CE /* AudioToolbox.framework */,
+				3BBE36601A268DD500BC26CE /* CFNetwork.framework */,
+				3BBE36621A268DEA00BC26CE /* CoreGraphics.framework */,
+				3BBE36641A268DF200BC26CE /* CoreLocation.framework */,
 				43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */,
+				3BBE36661A268E0B00BC26CE /* libz.dylib */,
+				3BBE36681A268E1E00BC26CE /* MobileCoreServices.framework */,
+				3BBE366A1A268E2A00BC26CE /* QuartzCore.framework */,
+				3BBE366C1A268E3200BC26CE /* Security.framework */,
+				3BBE366E1A268E3C00BC26CE /* StoreKit.framework */,
+				3BBE36701A268E5400BC26CE /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -325,11 +325,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBE364E1A2671DE00BC26CE /* Main.storyboard in Resources */,
-				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
 				1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */,
-				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
 				1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */,
+				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
+				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
+				3BBE364E1A2671DE00BC26CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,17 +380,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBE36511A26747600BC26CE /* LoginViewController.m in Sources */,
-				3BBE364C1A2671DE00BC26CE /* PageViewController.m in Sources */,
-				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,
-				3BBE364D1A2671DE00BC26CE /* PageContentViewController.m in Sources */,
 				1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
-				3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */,
+				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
+				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,
+				3BBE36511A26747600BC26CE /* LoginViewController.m in Sources */,
 				3B17D9181A1837630071A429 /* main.m in Sources */,
+				3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */,
+				3BBE364D1A2671DE00BC26CE /* PageContentViewController.m in Sources */,
+				3BBE364C1A2671DE00BC26CE /* PageViewController.m in Sources */,
 				3B7D4E851A2071E100FDCFB3 /* RightMenuViewController.m in Sources */,
 				3BBE36541A267BDE00BC26CE /* SignUpViewController.m in Sources */,
-				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

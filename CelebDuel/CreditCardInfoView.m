@@ -145,6 +145,10 @@
     // The full card number is available as info.cardNumber, but don't log that!
     NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.redactedCardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
     // Use the card info...
+    _cardNumber.text = info.redactedCardNumber;
+    _expMonth.text = [NSString stringWithFormat:@"%lu",(unsigned long)info.expiryMonth];
+    _expYear.text = [NSString stringWithFormat:@"%lu",(unsigned long)info.expiryYear];
+    _securityCode.text = info.cvv;
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

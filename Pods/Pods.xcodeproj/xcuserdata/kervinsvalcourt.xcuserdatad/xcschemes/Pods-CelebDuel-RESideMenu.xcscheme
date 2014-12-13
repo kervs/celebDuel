@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B20BC46D69F6EE5CF8431822"
+               BlueprintIdentifier = "4E672AE23526B2323150AFE3"
                BuildableName = "libPods-CelebDuel-RESideMenu.a"
                BlueprintName = "Pods-CelebDuel-RESideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">

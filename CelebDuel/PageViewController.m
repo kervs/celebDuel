@@ -6,17 +6,19 @@
 //  Copyright (c) 2014 JESSE SCHNEIDER. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PageViewController.h"
 #import <Parse/Parse.h>
 #import "MainViewController.h"
 #import "LeftMenuViewController.h"
 #import "RightMenuViewController.h"
 
-@interface ViewController () <RESideMenuDelegate>
-
+@interface PageViewController () <RESideMenuDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@property (weak, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageTitles;
+@property (strong, nonatomic) NSArray *pageImages;
 @end
 
-@implementation ViewController
+@implementation PageViewController
 
 
 
@@ -27,35 +29,15 @@
     
     PFUser *user = [PFUser currentUser];
     if (user.username != nil) {
-        
-        UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-        LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
-        RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
-        
-        RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
-                                                                        leftMenuViewController:leftMenuViewController
-                                                                       rightMenuViewController:rightMenuViewController];
-        sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-        sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
-        sideMenuViewController.delegate = self;
-        sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-        sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-        sideMenuViewController.contentViewShadowOpacity = 0.6;
-        sideMenuViewController.contentViewShadowRadius = 12;
-        sideMenuViewController.contentViewShadowEnabled = YES;
-        
-        [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
-        
-        
+        [self createMainView];
         
     }
-
-    
     _pageTitles = @[@"Testing Testing", @"Test2", @"Test3", @"Test4"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
     
     PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
@@ -70,6 +52,25 @@
     [self.pageViewController didMoveToParentViewController:self];
 }
 
+- (void) createMainView {
+    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+    LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
+    RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
+    
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
+                                                                    leftMenuViewController:leftMenuViewController
+                                                                   rightMenuViewController:rightMenuViewController];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    
+    [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+}
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController

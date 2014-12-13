@@ -16,6 +16,11 @@
 @interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
+@property (strong,nonatomic) UINavigationController *navCon;
+@property (strong,nonatomic) LeftMenuViewController *leftMenuViewController;
+@property (strong,nonatomic) RightMenuViewController *rightMenuViewController;
+@property (strong,nonatomic) RESideMenu *sideMenuViewController;
+
 
 @end
 
@@ -29,53 +34,54 @@
     _passwordLabel.delegate = self;
 }
 
-- (IBAction)loginFired:(UIButton *)sender {
-    
-    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-    LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
-    RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
-    
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navCon
-                                                                    leftMenuViewController:leftMenuViewController
-                                                                   rightMenuViewController:rightMenuViewController];
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
-    sideMenuViewController.delegate = self;
-    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    sideMenuViewController.contentViewShadowOpacity = 0.6;
-    sideMenuViewController.contentViewShadowRadius = 12;
-    sideMenuViewController.contentViewShadowEnabled = YES;
-   
-    
+- (IBAction)loginFired:(UIButton *)sender {    
     [PFUser logInWithUsernameInBackground:_emailLabel.text password:_passwordLabel.text
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             // Do stuff after successful login.
-                                            [[UIApplication sharedApplication].keyWindow setRootViewController:sideMenuViewController];
+                                            [self createMainView];
+                                            [[UIApplication sharedApplication].keyWindow setRootViewController:_sideMenuViewController];
 
                                         } else {
                                             // The login failed. Check error to see why.
                                             NSString *errorString = [error userInfo][@"error"];
-                                            // Show the errorString somewhere and let the user try again.
-                                            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                                                             message: [NSString stringWithFormat: @"%@",errorString]
-                                                                                            delegate:self
-                                                                                   cancelButtonTitle:@"Cancel"
-                                                                                   otherButtonTitles: nil];
-                                            [alert show];
+                                            [self displayAlertView:errorString];
 
                                         }
                                     }];
 
+}
 
+- (void)displayAlertView:(NSString *)message{
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                     message: message
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert show];
+}
+
+
+- (void)createMainView {
+    _navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+    _leftMenuViewController = [[LeftMenuViewController alloc] init];
+    _rightMenuViewController = [[RightMenuViewController alloc] init];
     
-    
-    
-    
+    _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_navCon
+                                                         leftMenuViewController:_leftMenuViewController
+                                                        rightMenuViewController:_rightMenuViewController];
+    _sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    _sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    _sideMenuViewController.delegate = self;
+    _sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    _sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    _sideMenuViewController.contentViewShadowOpacity = 0.6;
+    _sideMenuViewController.contentViewShadowRadius = 12;
+    _sideMenuViewController.contentViewShadowEnabled = YES;
     
     
 }
+
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {

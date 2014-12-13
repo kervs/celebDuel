@@ -81,12 +81,6 @@
     
     [self presentViewController:newView animated:YES completion:nil];
     
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"What do you want to do with the file?"
-//                                                             delegate:self
-//                                                    cancelButtonTitle:@"Cancel"
-//                                               destructiveButtonTitle:@"Delete it"
-//                                                    otherButtonTitles:@"Copy", @"Move", @"Duplicate", nil];
-//    [actionSheet showInView:self.view];
 }
 
 

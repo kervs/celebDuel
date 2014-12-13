@@ -1,1 +1,0 @@
-PODS_CELEBDUEL_RESIDEMENU_OTHER_LDFLAGS = -framework "QuartzCore"

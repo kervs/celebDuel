@@ -17,6 +17,7 @@
 		3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9241A1837630071A429 /* LaunchScreen.xib */; };
 		3B17D9321A1837630071A429 /* CelebDuelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9311A1837630071A429 /* CelebDuelTests.m */; };
 		3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D93C1A18385F0071A429 /* MainViewController.m */; };
+		3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68B6591A3D07BC002BB539 /* PaymentViewController.m */; };
 		3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */; };
 		3B7D4E851A2071E100FDCFB3 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E841A2071E100FDCFB3 /* RightMenuViewController.m */; };
 		3BBE364C1A2671DE00BC26CE /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE36481A2671DE00BC26CE /* PageViewController.m */; };
@@ -56,6 +57,8 @@
 		3B17D9311A1837630071A429 /* CelebDuelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelebDuelTests.m; sourceTree = "<group>"; };
 		3B17D93B1A18385F0071A429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3B17D93C1A18385F0071A429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3B68B6581A3D07BC002BB539 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		3B68B6591A3D07BC002BB539 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		3B7D4E821A2071D400FDCFB3 /* LeftMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		3B7D4E831A2071E100FDCFB3 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 		1B598ABD1A2C10BA00A1E5C5 /* AddFunds */ = {
 			isa = PBXGroup;
 			children = (
+				3B68B6581A3D07BC002BB539 /* PaymentViewController.h */,
+				3B68B6591A3D07BC002BB539 /* PaymentViewController.m */,
 				1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */,
 				1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */,
 				1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */,
@@ -383,6 +388,7 @@
 				1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
 				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
+				3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */,
 				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,
 				3BBE36511A26747600BC26CE /* LoginViewController.m in Sources */,
 				3B17D9181A1837630071A429 /* main.m in Sources */,

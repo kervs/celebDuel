@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AddFunds.h"
+#import "PaymentViewController.h"
 
 
 @interface MainViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -93,6 +94,12 @@ static NSString *CellIdentifier = @"Cell Identifier";
 
 
 #pragma mark - buttons
+
+- (void)upcomingEventFired:(id)sender {
+    PaymentViewController *payment = [[PaymentViewController alloc ]init];
+    
+    [self.navigationController pushViewController:payment animated:NO];
+}
 
 - (void)addFundsFired:(id)sender {
     AddFunds *fundsView = [[AddFunds alloc]init];

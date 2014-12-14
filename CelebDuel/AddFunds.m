@@ -7,6 +7,8 @@
 //
 
 #import "AddFunds.h"
+#import "Stripe.h"
+#import "PaymentViewController.h"
 
 
 @interface AddFunds ()

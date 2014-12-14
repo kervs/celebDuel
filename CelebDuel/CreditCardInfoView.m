@@ -8,8 +8,9 @@
 
 #import "CreditCardInfoView.h"
 #import "CardIO.h"
+#import "Stripe.h"
 
-@interface CreditCardInfoView () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate,CardIOPaymentViewControllerDelegate>
+@interface CreditCardInfoView () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate,CardIOPaymentViewControllerDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *cardNumber;
 @property (strong, nonatomic) IBOutlet UITextField *expMonth;
@@ -115,9 +116,22 @@
 
 - (IBAction)depositFunds:(id)sender {
 
-    //DO SERVER CALL HERE!
+  
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void) handleError:(NSError *)error {
+    NSString *errorString = [error userInfo][@"error"];
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                     message: errorString
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert show];
+
+    
 }
 
 

@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Stripe.h"
 
+NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
 
 
 @interface AppDelegate ()
@@ -30,6 +32,9 @@
                   clientKey:@"EUXFiDdUGIJao11NNWQepHbCciLrPitVlTFQCPHu"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [Stripe setDefaultPublishableKey:StripePublishableKey];
+    return YES;
     
        return YES;
 }

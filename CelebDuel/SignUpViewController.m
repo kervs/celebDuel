@@ -57,7 +57,8 @@
                 [self displayAlertView:message];
             }
             else {
-                [self displayAlertView:[error description]];
+                
+                [self displayAlertView:[error userInfo][@"error"]];
             }
             
         } else {
@@ -66,9 +67,6 @@
             [self sendWelcomeEmail];
         }
     }];
-//    FBLoginView *loginView = [[FBLoginView alloc] init];
-//    loginView.center = self.view.center;
-//    [self.view addSubview:loginView];
 }
 
 

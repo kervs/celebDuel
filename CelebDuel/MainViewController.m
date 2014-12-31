@@ -12,15 +12,12 @@
 #import "PaymentViewController.h"
 
 
-@interface MainViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-
-@property (nonatomic,strong)UIToolbar *toolBar;
-@property (nonatomic,strong)UICollectionView *collectionView;
-@property (nonatomic,strong)UIBarButtonItem *addFunds;
 @property (nonatomic,strong)UIBarButtonItem *menuButton;
-@property (nonatomic,strong)UIBarButtonItem *viewEvents;
-@property (nonatomic,strong)UIBarButtonItem *filters;
+@property (nonatomic,strong)UIBarButtonItem *addJob;
+@property (nonatomic,strong)UITableView *tableView;
+
 @end
 
 @implementation MainViewController
@@ -30,53 +27,20 @@ static NSString *CellIdentifier = @"Cell Identifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.addFunds = [[UIBarButtonItem alloc]initWithTitle:@"Add Funds"style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
-    
-    self.viewEvents = [[UIBarButtonItem alloc]initWithTitle:@"View Events" style:UIBarButtonItemStylePlain target:self action:@selector(upcomingEventFired:)];
-    
-    
-     UIBarButtonItem *flexButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    
-    
-    NSArray *itemsArray = [NSArray arrayWithObjects:flexButton,_addFunds,flexButton, _viewEvents,flexButton, nil];
-    
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     
     
     self.menuButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem = self.menuButton;
+    self.addJob = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
+    self.navigationItem.rightBarButtonItem = self.addJob;
     
-    self.filters = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"filters"] style:UIBarButtonItemStylePlain target:self action:@selector(presentRightMenuViewController:)];
-    self.navigationItem.rightBarButtonItem = self.filters;
-    
-   
-    self.toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44)];
-    self.toolBar.backgroundColor = [UIColor redColor];
-    
-    
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.navigationController.navigationBar.frame) -44 ) collectionViewLayout:layout];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    self.collectionView.dataSource = self;
-    self.collectionView.delegate = self;
-    
-    self.title = @"CelebDuel";
-    
-    
-    
-    [_collectionView setDataSource:self];
-    [_collectionView setDelegate:self];
-    
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    [_collectionView setBackgroundColor:[UIColor whiteColor]];
-    
-    
-    [self.view addSubview:_toolBar];
-    [self.toolBar setItems:itemsArray];
-    [self.view addSubview:_collectionView];
-    
+    self.title = @"The OJ";
+    [self.view addSubview:self.tableView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -106,36 +70,42 @@ static NSString *CellIdentifier = @"Cell Identifier";
     [self presentViewController:fundsView animated:YES completion:nil];
 }
 
-#pragma mark - UICollectionViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 100;
+    return 1;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
     
-    cell.backgroundColor=[UIColor greenColor];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
+        cell.selectedBackgroundView = [[UIView alloc] init];
+    }
+    
+    NSArray *titles = @[@"Fee", @"Type Bet",@"Sort By"];
+    cell.textLabel.text = titles[indexPath.row];
+    cell.textLabel.textAlignment = NSTextAlignmentRight;
+    
     return cell;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0; // This is the minimum inter item spacing, can be more
-}
 
-- (UIEdgeInsets)collectionView:
-(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(self.view.frame.size.width/3, self.view.frame.size.height/2);
-}
 
 
 @end

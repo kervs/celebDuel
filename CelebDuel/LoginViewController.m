@@ -21,7 +21,6 @@
 @property (strong,nonatomic) RightMenuViewController *rightMenuViewController;
 @property (strong,nonatomic) RESideMenu *sideMenuViewController;
 
-
 @end
 
 @implementation LoginViewController
@@ -34,6 +33,15 @@
     _passwordLabel.delegate = self;
 }
 
+- (IBAction)connectWithFB:(UIButton *)sender {
+    return;
+}
+
+- (IBAction)connectWithTW:(UIButton *)sender {
+    return;
+}
+
+
 - (IBAction)loginFired:(UIButton *)sender {    
     [PFUser logInWithUsernameInBackground:_emailLabel.text password:_passwordLabel.text
                                     block:^(PFUser *user, NSError *error) {
@@ -44,8 +52,8 @@
 
                                         } else {
                                             // The login failed. Check error to see why.
-                                            NSString *errorString = [error userInfo][@"error"];
-                                            [self displayAlertView:errorString];
+                                            
+                                            [self displayAlertView:[error description]];
 
                                         }
                                     }];

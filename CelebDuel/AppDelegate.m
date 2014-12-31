@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "Stripe.h"
+#import <FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
 
@@ -32,11 +34,12 @@ NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
                   clientKey:@"EUXFiDdUGIJao11NNWQepHbCciLrPitVlTFQCPHu"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFFacebookUtils initializeFacebook];
     
     [Stripe setDefaultPublishableKey:StripePublishableKey];
     return YES;
     
-       return YES;
+      
 }
 
 #pragma mark -
@@ -62,6 +65,11 @@ NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
     NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

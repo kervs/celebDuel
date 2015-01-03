@@ -15,7 +15,7 @@
     [self registerSubclass];
 }
 
-@dynamic titleOfJob;
+@dynamic title;
 @dynamic paymentType;
 @dynamic jobStartDate;
 @dynamic paymentAmount;

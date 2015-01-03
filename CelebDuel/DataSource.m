@@ -27,28 +27,9 @@
 
 - (instancetype) init {
     self = [super init];
-    NSMutableArray *_mutableJobItems = [NSMutableArray array];
+    
     if (self) {
-        PFQuery *query = [PFQuery queryWithClassName:@"Job"];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                // The find succeeded.
-                NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-                // Do something with the found objects
-                for (Job *object in objects) {
-                    NSLog(@"%@", object.createdAt);
-                    [_mutableJobItems addObject:object];
-                }
-            } else {
-                // Log details of the failure
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-                [self displayAlertView:[NSString stringWithFormat: @"%@",[error userInfo]]];
-                
-            }
-            self.jobItems = _mutableJobItems;
-            NSLog(@"there are %lu jobs",(unsigned long)self.jobItems.count);
-        }];
-        
+        [self pullDataFromServer];
     }
     return self;
 }
@@ -62,6 +43,28 @@
     [alert show];
 }
 
+-(void)pullDataFromServer{
+    NSMutableArray *_mutableJobItems = [NSMutableArray array];
+    PFQuery *query = [PFQuery queryWithClassName:@"Job"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu jobs.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (Job *object in objects) {
+                [_mutableJobItems addObject:object];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            [self displayAlertView:[NSString stringWithFormat: @"%@",[error userInfo]]];
+            
+        }
+        self.jobItems = _mutableJobItems;
+    }];
+
+    
+}
 
 
 @end

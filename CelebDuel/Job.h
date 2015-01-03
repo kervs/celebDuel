@@ -10,7 +10,7 @@
 
 @interface Job : PFObject<PFSubclassing>
 + (NSString *)parseClassName;
-@property(retain) NSString *titleOfJob;
+@property(retain) NSString *title;
 @property(retain) NSString *paymentType;
 @property(retain) NSDate *jobStartDate;
 @property(retain) NSString *paymentAmount;

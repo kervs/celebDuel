@@ -150,8 +150,8 @@
 		3B17D9141A1837630071A429 /* CelebDuel */ = {
 			isa = PBXGroup;
 			children = (
-				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
 				3BBE36341A2641A700BC26CE /* Intro View */,
+				3B2353D71A5788F300C5FB1A /* Secondary View */,
 				3B2CA71A1A203725004B2AD7 /* MainView */,
 				3B8066531A53464A00FD7DAB /* DataSource */,
 				3BD8CD2C1A32BAA9004618EB /* Models */,
@@ -188,6 +188,22 @@
 				3B17D9301A1837630071A429 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B2353D71A5788F300C5FB1A /* Secondary View */ = {
+			isa = PBXGroup;
+			children = (
+				3B2353D81A57897E00C5FB1A /* Job View */,
+				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
+			);
+			name = "Secondary View";
+			sourceTree = "<group>";
+		};
+		3B2353D81A57897E00C5FB1A /* Job View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Job View";
 			sourceTree = "<group>";
 		};
 		3B2CA71A1A203725004B2AD7 /* MainView */ = {

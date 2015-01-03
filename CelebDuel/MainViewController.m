@@ -50,7 +50,7 @@ static NSString *CellIdentifier = @"Cell Identifier";
         
         for (Job *job in [DataSource sharedInstance].jobItems) {
             [tempArray addObject:job];
-            NSLog(@"%@",job.titleOfJob);
+            
         }
         
         self.jobArray = tempArray;
@@ -78,17 +78,22 @@ static NSString *CellIdentifier = @"Cell Identifier";
     self.navigationItem.leftBarButtonItem = self.menuButton;
     self.addJob = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
     self.navigationItem.rightBarButtonItem = self.addJob;
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
     self.title = @"The OJ";
     
     [self setupRefreshControl];
 
 }
 
-- (void)setItemToJobsArray {
-    self.jobArray = [[NSArray alloc]initWithArray:[DataSource sharedInstance].jobItems];
+- (void)reloadJobList {
+    [[DataSource sharedInstance] pullDataFromServer];
+    NSMutableArray *tempArray = [NSMutableArray array];
+    
+    for (Job *job in [DataSource sharedInstance].jobItems) {
+        [tempArray addObject:job];
+        
+    }
+    
+    self.jobArray = tempArray;
     [self.tableView reloadData];
     NSLog(@"%lu",(unsigned long)self.jobArray.count);
 }
@@ -138,13 +143,13 @@ static NSString *CellIdentifier = @"Cell Identifier";
     
     // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
     // This is where you'll make requests to an API, reload data, or process information
-    [self setItemToJobsArray];
+    [self reloadJobList];
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        
         // When done requesting/reloading/processing invoke endRefreshing, to close the control
+        [self reloadJobList];
         [self.refreshControl endRefreshing];
     });
     // -- FINISHED SOMETHING AWESOME, WOO! --
@@ -316,8 +321,7 @@ static NSString *CellIdentifier = @"Cell Identifier";
     Job *jobObject = [self.jobArray objectAtIndex:[indexPath row]];
     
     
-    cell.textLabel.text = jobObject.titleOfJob;
-    NSLog(@"%@",jobObject.titleOfJob);
+    cell.textLabel.text = jobObject.title;
     return cell;
 }
 

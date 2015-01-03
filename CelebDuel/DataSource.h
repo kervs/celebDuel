@@ -10,4 +10,5 @@
 
 @interface DataSource : NSObject
 +(instancetype) sharedInstance;
+@property (nonatomic, strong, readonly)NSArray *jobItems;
 @end

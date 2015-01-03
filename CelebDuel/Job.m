@@ -7,10 +7,15 @@
 //
 
 #import "Job.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Job
 
-@dynamic title;
++ (void)load {
+    [self registerSubclass];
+}
+
+@dynamic titleOfJob;
 @dynamic paymentType;
 @dynamic jobStartDate;
 @dynamic paymentAmount;

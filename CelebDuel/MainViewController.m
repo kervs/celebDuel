@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AddFunds.h"
 #import "PaymentViewController.h"
+#import "DataSource.h"
+#import "Job.h"
 
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -17,37 +19,78 @@
 @property (nonatomic,strong)UIBarButtonItem *menuButton;
 @property (nonatomic,strong)UIBarButtonItem *addJob;
 @property (nonatomic,strong)UITableView *tableView;
-@property (nonatomic, strong) UIView *refreshLoadingView;
-@property (nonatomic, strong) UIView *refreshColorView;
-@property (nonatomic, strong) UIImageView *compass_background;
-@property (nonatomic, strong) UIImageView *compass_spinner;
-@property (assign) BOOL isRefreshIconsOverlap;
-@property (assign) BOOL isRefreshAnimating;
+@property (nonatomic,strong)UIView *refreshLoadingView;
+@property (nonatomic,strong)UIView *refreshColorView;
+@property (nonatomic,strong)UIImageView *compass_background;
+@property (nonatomic,strong)UIImageView *compass_spinner;
+@property (nonatomic,strong)NSArray *jobArray;
+@property (assign)BOOL isRefreshIconsOverlap;
+@property (assign)BOOL isRefreshAnimating;
 
 @end
 
 @implementation MainViewController
+
 static NSString *CellIdentifier = @"Cell Identifier";
+
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        
+        [[DataSource sharedInstance] addObserver:self forKeyPath:@"self.jobItems" options:NSKeyValueObservingOptionNew context:nil];
+        
+    }
+    return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if (object ) {
+        NSMutableArray *tempArray = [NSMutableArray array];
+        
+        for (Job *job in [DataSource sharedInstance].jobItems) {
+            [tempArray addObject:job];
+            NSLog(@"%@",job.titleOfJob);
+        }
+        
+        self.jobArray = tempArray;
+    }
+    [self.tableView reloadData];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+
+- (void)dealloc {
+    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"self.jobItems"];
+}
+
+- (void)loadView {
+    [super loadView];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    //self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-    
-    
-    
+  
     self.menuButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem = self.menuButton;
     self.addJob = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
     self.navigationItem.rightBarButtonItem = self.addJob;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     self.title = @"The OJ";
-    //[self.view addSubview:self.tableView];
+    
     [self setupRefreshControl];
 
+}
+
+- (void)setItemToJobsArray {
+    self.jobArray = [[NSArray alloc]initWithArray:[DataSource sharedInstance].jobItems];
+    [self.tableView reloadData];
+    NSLog(@"%lu",(unsigned long)self.jobArray.count);
 }
 
 - (void)setupRefreshControl
@@ -95,6 +138,7 @@ static NSString *CellIdentifier = @"Cell Identifier";
     
     // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
     // This is where you'll make requests to an API, reload data, or process information
+    [self setItemToJobsArray];
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -240,8 +284,10 @@ static NSString *CellIdentifier = @"Cell Identifier";
 }
 
 - (void)addFundsFired:(id)sender {
-    AddFunds *fundsView = [[AddFunds alloc]init];
-    [self presentViewController:fundsView animated:YES completion:nil];
+    NSLog(@"%lu",(unsigned long)self.jobArray.count);
+    NSLog(@"%@",self.jobArray);
+//    AddFunds *fundsView = [[AddFunds alloc]init];
+//    [self presentViewController:fundsView animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -254,7 +300,7 @@ static NSString *CellIdentifier = @"Cell Identifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 3;
+    return self.jobArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -265,17 +311,13 @@ static NSString *CellIdentifier = @"Cell Identifier";
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
+       
     }
+    Job *jobObject = [self.jobArray objectAtIndex:[indexPath row]];
     
-    NSArray *titles = @[@"Fee", @"Type Bet",@"Sort By"];
-    cell.textLabel.text = titles[indexPath.row];
-    cell.textLabel.textAlignment = NSTextAlignmentRight;
     
+    cell.textLabel.text = jobObject.titleOfJob;
+    NSLog(@"%@",jobObject.titleOfJob);
     return cell;
 }
 

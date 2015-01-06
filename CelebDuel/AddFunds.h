@@ -11,11 +11,7 @@
 
 @interface AddFunds : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *statesTextField;
 
-@property (strong, nonatomic) IBOutlet UITextField *depositAmountTextField;
-
-- (IBAction)creditCard:(id)sender;
 
 
 @end

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddJobViewController">
+            <connections>
+                <outlet property="jobCompensationTextField" destination="iwQ-FY-wCz" id="qtN-Cf-Cp7"/>
+                <outlet property="jobDescriptionTextView" destination="QZO-kY-vyX" id="xsa-xo-CKI"/>
+                <outlet property="jobFormOfPaymentTextField" destination="kU3-pR-Hsg" id="AL5-lM-BHD"/>
+                <outlet property="jobTitleTextField" destination="Qri-5Q-zsU" id="sef-e9-pkR"/>
+                <outlet property="jobZipCodeTextField" destination="Y2S-7v-oAg" id="Z6y-If-PQ8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount of Payment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-FY-wCz">
+                    <rect key="frame" x="54" y="175" width="149" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Form of Payment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kU3-pR-Hsg">
+                    <rect key="frame" x="218" y="175" width="143" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="143" id="4oj-9i-ISc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of Job" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-5Q-zsU">
+                    <rect key="frame" x="54" y="119" width="307" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZO-kY-vyX">
+                    <rect key="frame" x="54" y="232" width="307" height="265"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="265" id="lqg-Du-uls"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDR-lM-660">
+                    <rect key="frame" x="54" y="599" width="307" height="30"/>
+                    <state key="normal" title="Post Job">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="jobPostBtnDidPreesed:" destination="-1" eventType="touchUpInside" id="Eoz-vv-WtP"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post your New OJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-IH-98v">
+                    <rect key="frame" x="135" y="36" width="154" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="154" id="UKk-Bw-Yhh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJR-gd-Bl0">
+                    <rect key="frame" x="307" y="27" width="54" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelBtnDidPressed:" destination="-1" eventType="touchUpInside" id="d1O-XJ-qZu"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Zip Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-7v-oAg">
+                    <rect key="frame" x="126" y="529" width="163" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="Of8-Md-48d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UUu-IH-98v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="69c-ep-L7E"/>
+                <constraint firstItem="kU3-pR-Hsg" firstAttribute="leading" secondItem="iwQ-FY-wCz" secondAttribute="trailing" constant="15" id="7Kc-QK-4dL"/>
+                <constraint firstItem="QZO-kY-vyX" firstAttribute="top" secondItem="iwQ-FY-wCz" secondAttribute="bottom" constant="27" id="J1U-CM-qIb"/>
+                <constraint firstItem="iwQ-FY-wCz" firstAttribute="top" secondItem="Qri-5Q-zsU" secondAttribute="bottom" constant="26" id="JIw-62-sCc"/>
+                <constraint firstItem="Y2S-7v-oAg" firstAttribute="top" secondItem="QZO-kY-vyX" secondAttribute="bottom" constant="32" id="Jt7-FD-Bee"/>
+                <constraint firstItem="Qri-5Q-zsU" firstAttribute="leading" secondItem="iwQ-FY-wCz" secondAttribute="leading" id="NKz-q9-enq"/>
+                <constraint firstItem="Qri-5Q-zsU" firstAttribute="trailing" secondItem="kU3-pR-Hsg" secondAttribute="trailing" id="Q07-Kc-zPH"/>
+                <constraint firstItem="zDR-lM-660" firstAttribute="leading" secondItem="QZO-kY-vyX" secondAttribute="leading" id="QLi-Fm-qyn"/>
+                <constraint firstItem="iwQ-FY-wCz" firstAttribute="baseline" secondItem="kU3-pR-Hsg" secondAttribute="baseline" id="W6C-dx-cJc"/>
+                <constraint firstItem="zDR-lM-660" firstAttribute="top" secondItem="Y2S-7v-oAg" secondAttribute="bottom" constant="40" id="YwX-A3-ICE"/>
+                <constraint firstItem="QZO-kY-vyX" firstAttribute="leading" secondItem="iwQ-FY-wCz" secondAttribute="leading" id="Zcm-bs-ooT"/>
+                <constraint firstItem="QZO-kY-vyX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="edQ-3b-Doz"/>
+                <constraint firstItem="UUu-IH-98v" firstAttribute="trailing" secondItem="Y2S-7v-oAg" secondAttribute="trailing" id="fHg-nq-N5E"/>
+                <constraint firstItem="QZO-kY-vyX" firstAttribute="trailing" secondItem="kU3-pR-Hsg" secondAttribute="trailing" id="fqt-fO-biW"/>
+                <constraint firstItem="Y2S-7v-oAg" firstAttribute="centerX" secondItem="zDR-lM-660" secondAttribute="centerX" id="hkc-gJ-Gb8"/>
+                <constraint firstItem="Qri-5Q-zsU" firstAttribute="top" secondItem="UUu-IH-98v" secondAttribute="bottom" constant="62" id="ud3-Ry-kI2"/>
+                <constraint firstItem="zDR-lM-660" firstAttribute="trailing" secondItem="QZO-kY-vyX" secondAttribute="trailing" id="yVA-aS-Cg4"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>

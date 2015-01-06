@@ -14,6 +14,9 @@
 @interface AddFunds ()
 
 @property (strong,nonatomic) NSArray *theStates;
+@property (weak, nonatomic) IBOutlet UITextField *statesTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *depositAmountTextField;
 
 @end
 

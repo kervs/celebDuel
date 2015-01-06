@@ -59,6 +59,7 @@
             else {
                 
                 [self displayAlertView:[error userInfo][@"error"]];
+                NSLog(@"%@",error);
             }
             
         } else {

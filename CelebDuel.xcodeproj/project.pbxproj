@@ -17,6 +17,8 @@
 		3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9241A1837630071A429 /* LaunchScreen.xib */; };
 		3B17D9321A1837630071A429 /* CelebDuelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9311A1837630071A429 /* CelebDuelTests.m */; };
 		3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D93C1A18385F0071A429 /* MainViewController.m */; };
+		3B2353E61A590C6C00C5FB1A /* AddJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2353E41A590C6C00C5FB1A /* AddJobViewController.m */; };
+		3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */; };
 		3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68B6591A3D07BC002BB539 /* PaymentViewController.m */; };
 		3B7B2A5A1A5200C700EC7D63 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B2A591A5200C700EC7D63 /* RightMenuViewController.m */; };
 		3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */; };
@@ -59,6 +61,9 @@
 		3B17D9311A1837630071A429 /* CelebDuelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelebDuelTests.m; sourceTree = "<group>"; };
 		3B17D93B1A18385F0071A429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3B17D93C1A18385F0071A429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3B2353E31A590C6C00C5FB1A /* AddJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJobViewController.h; sourceTree = "<group>"; };
+		3B2353E41A590C6C00C5FB1A /* AddJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJobViewController.m; sourceTree = "<group>"; };
+		3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddJobViewController.xib; sourceTree = "<group>"; };
 		3B68B6581A3D07BC002BB539 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		3B68B6591A3D07BC002BB539 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		3B7B2A581A5200C700EC7D63 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
@@ -112,7 +117,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B598ABD1A2C10BA00A1E5C5 /* AddFunds */ = {
+		1B598ABD1A2C10BA00A1E5C5 /* Add Funds View */ = {
 			isa = PBXGroup;
 			children = (
 				1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */,
@@ -124,7 +129,7 @@
 				3B68B6581A3D07BC002BB539 /* PaymentViewController.h */,
 				3B68B6591A3D07BC002BB539 /* PaymentViewController.m */,
 			);
-			name = AddFunds;
+			name = "Add Funds View";
 			sourceTree = "<group>";
 		};
 		3B17D9091A1837630071A429 = {
@@ -193,8 +198,9 @@
 		3B2353D71A5788F300C5FB1A /* Secondary View */ = {
 			isa = PBXGroup;
 			children = (
+				3B2353DF1A590BA200C5FB1A /* Add Job View */,
 				3B2353D81A57897E00C5FB1A /* Job View */,
-				1B598ABD1A2C10BA00A1E5C5 /* AddFunds */,
+				1B598ABD1A2C10BA00A1E5C5 /* Add Funds View */,
 			);
 			name = "Secondary View";
 			sourceTree = "<group>";
@@ -204,6 +210,16 @@
 			children = (
 			);
 			name = "Job View";
+			sourceTree = "<group>";
+		};
+		3B2353DF1A590BA200C5FB1A /* Add Job View */ = {
+			isa = PBXGroup;
+			children = (
+				3B2353E31A590C6C00C5FB1A /* AddJobViewController.h */,
+				3B2353E41A590C6C00C5FB1A /* AddJobViewController.m */,
+				3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */,
+			);
+			name = "Add Job View";
 			sourceTree = "<group>";
 		};
 		3B2CA71A1A203725004B2AD7 /* MainView */ = {
@@ -364,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */,
 				1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */,
 				1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */,
 				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
@@ -420,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */,
+				3B2353E61A590C6C00C5FB1A /* AddJobViewController.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
 				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
 				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,

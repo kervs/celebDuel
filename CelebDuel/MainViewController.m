@@ -12,6 +12,8 @@
 #import "PaymentViewController.h"
 #import "DataSource.h"
 #import "Job.h"
+#import "RESideMenu.h"
+#import "AddJobViewController.h"
 
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -76,7 +78,7 @@ static NSString *CellIdentifier = @"Cell Identifier";
   
     self.menuButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem = self.menuButton;
-    self.addJob = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"addFunds"] style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
+    self.addJob = [[UIBarButtonItem alloc]initWithTitle:@"Post Job" style:UIBarButtonItemStylePlain target:self action:@selector(addFundsFired:)];
     self.navigationItem.rightBarButtonItem = self.addJob;
     self.title = @"The OJ";
     
@@ -291,8 +293,8 @@ static NSString *CellIdentifier = @"Cell Identifier";
 - (void)addFundsFired:(id)sender {
     NSLog(@"%lu",(unsigned long)self.jobArray.count);
     NSLog(@"%@",self.jobArray);
-//    AddFunds *fundsView = [[AddFunds alloc]init];
-//    [self presentViewController:fundsView animated:YES completion:nil];
+    AddJobViewController *addJob = [[AddJobViewController alloc]init];
+    [self presentViewController:addJob animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource Methods

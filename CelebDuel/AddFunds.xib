@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -16,104 +16,144 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" id="F1Z-iK-7KI">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="barTintColor" red="0.094117656350135803" green="0.7568628191947937" blue="0.078431375324726105" alpha="1" colorSpace="deviceRGB"/>
-                    <items>
-                        <navigationItem title="Add Funds" id="VTN-pu-vel">
-                            <barButtonItem key="rightBarButtonItem" title="Cancel" id="Iaj-ne-PLM">
-                                <connections>
-                                    <action selector="cancelDidFired:" destination="-1" id="H0f-ud-fNH"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcC-28-xdk">
-                    <rect key="frame" x="8" y="60" width="53" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcC-28-xdk">
+                    <rect key="frame" x="25" y="45" width="53" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR ENTER A CUSTOM AMOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9kD-NX-fHa">
-                    <rect key="frame" x="8" y="112" width="186" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR ENTER A CUSTOM AMOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kD-NX-fHa">
+                    <rect key="frame" x="25" y="112" width="186" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="tir-Fw-8BS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bPE-cm-BaI">
-                    <rect key="frame" x="95" y="79" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-cm-BaI">
+                    <rect key="frame" x="48" y="79" width="30" height="30"/>
                     <state key="normal" title="$10">
                         <color key="titleShadowColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
                     </state>
+                    <connections>
+                        <action selector="TenDollarBtnDidFired:" destination="-1" eventType="touchUpInside" id="wDg-OL-eyB"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bNe-EA-lDP">
-                    <rect key="frame" x="170" y="79" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNe-EA-lDP">
+                    <rect key="frame" x="145" y="79" width="30" height="30"/>
                     <state key="normal" title="$25">
                         <color key="titleShadowColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
                     </state>
+                    <connections>
+                        <action selector="twentyFiveDollarBtnDidFired:" destination="-1" eventType="touchUpInside" id="op6-fl-IC1"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8rN-DC-r0P">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rN-DC-r0P">
                     <rect key="frame" x="244" y="79" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="$50">
                         <color key="titleShadowColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
                     </state>
+                    <connections>
+                        <action selector="fifthyDollarBtnDidFired:" destination="-1" eventType="touchUpInside" id="xry-TH-IUV"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit amount: $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4zZ-du-cMY">
-                    <rect key="frame" x="8" y="141" width="95" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="ddd-G0-LIZ">
-                    <rect key="frame" x="111" y="137" width="83" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-G0-LIZ">
+                    <rect key="frame" x="145" y="141" width="83" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you?" minimumFontSize="17" id="fGh-Kt-fyl">
-                    <rect key="frame" x="111" y="213" width="162" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Kt-fyl">
+                    <rect key="frame" x="79" y="217" width="162" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT STATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tS8-Hn-Tey">
-                    <rect key="frame" x="8" y="195" width="87" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT STATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-Hn-Tey">
+                    <rect key="frame" x="25" y="188" width="87" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="87" id="ytx-jM-kME"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A PAYMENT METHOD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wUZ-22-hi8">
-                    <rect key="frame" x="94" y="308" width="183" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A PAYMENT METHOD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-22-hi8">
+                    <rect key="frame" x="61" y="279" width="183" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="JfZ-u8-8Ak"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ha1-sV-vLh">
-                    <rect key="frame" x="146" y="337" width="79" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha1-sV-vLh">
+                    <rect key="frame" x="113" y="323" width="79" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="79" id="8lr-Qg-0Fp"/>
+                        <constraint firstAttribute="height" constant="30" id="Q3c-vB-psI"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="tintColor" red="0.094117656349999995" green="0.75686281919999998" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
                     <state key="normal" title="Credit Card">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="creditCard:" destination="-1" eventType="touchUpInside" id="OEl-B6-hO4"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlF-x2-yoW">
+                    <rect key="frame" x="233" y="25" width="53" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="canelBtnDidFired:" destination="-1" eventType="touchUpInside" id="KP7-bT-mzn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit amount: $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zZ-du-cMY">
+                    <rect key="frame" x="25" y="145" width="95" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="YXy-Da-quw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bPE-cm-BaI" firstAttribute="top" secondItem="hcC-28-xdk" secondAttribute="bottom" constant="13" id="05J-G1-yJ7"/>
+                <constraint firstItem="ddd-G0-LIZ" firstAttribute="leading" secondItem="bNe-EA-lDP" secondAttribute="leading" id="7Ep-UO-R88"/>
+                <constraint firstAttribute="trailing" secondItem="wUZ-22-hi8" secondAttribute="trailing" constant="76" id="7xs-Uk-MwW"/>
+                <constraint firstItem="wUZ-22-hi8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="61" id="8JH-TK-q06"/>
+                <constraint firstItem="hcC-28-xdk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="Abs-Pa-0Kr"/>
+                <constraint firstItem="ddd-G0-LIZ" firstAttribute="leading" secondItem="4zZ-du-cMY" secondAttribute="trailing" constant="25" id="BH3-dB-23v"/>
+                <constraint firstItem="9kD-NX-fHa" firstAttribute="top" secondItem="bPE-cm-BaI" secondAttribute="bottom" constant="3" id="Bam-xM-Tm4"/>
+                <constraint firstItem="ddd-G0-LIZ" firstAttribute="top" secondItem="9kD-NX-fHa" secondAttribute="bottom" constant="8" symbolic="YES" id="CRu-i6-Bf1"/>
+                <constraint firstItem="8rN-DC-r0P" firstAttribute="centerX" secondItem="dlF-x2-yoW" secondAttribute="centerX" id="Fdb-zZ-lAV"/>
+                <constraint firstAttribute="trailing" secondItem="ddd-G0-LIZ" secondAttribute="trailing" constant="92" id="Kk0-lD-Nia"/>
+                <constraint firstItem="bNe-EA-lDP" firstAttribute="top" secondItem="8rN-DC-r0P" secondAttribute="top" id="LlU-yv-DGK"/>
+                <constraint firstItem="Ha1-sV-vLh" firstAttribute="top" secondItem="wUZ-22-hi8" secondAttribute="bottom" constant="23" id="M1m-hP-l95"/>
+                <constraint firstItem="tS8-Hn-Tey" firstAttribute="top" secondItem="4zZ-du-cMY" secondAttribute="bottom" constant="22" id="Nr4-Xt-Ky1"/>
+                <constraint firstItem="dlF-x2-yoW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="OB9-B5-sdx"/>
+                <constraint firstItem="4zZ-du-cMY" firstAttribute="leading" secondItem="tS8-Hn-Tey" secondAttribute="leading" id="Od6-dC-lbt"/>
+                <constraint firstAttribute="trailing" secondItem="dlF-x2-yoW" secondAttribute="trailing" constant="34" id="OiZ-5k-2hl"/>
+                <constraint firstItem="Ha1-sV-vLh" firstAttribute="centerX" secondItem="wUZ-22-hi8" secondAttribute="centerX" id="PeV-6V-Ysj"/>
+                <constraint firstItem="9kD-NX-fHa" firstAttribute="leading" secondItem="4zZ-du-cMY" secondAttribute="leading" id="Rrj-nf-czg"/>
+                <constraint firstAttribute="trailing" secondItem="8rN-DC-r0P" secondAttribute="trailing" constant="46" id="S5Z-CH-mnD"/>
+                <constraint firstItem="8rN-DC-r0P" firstAttribute="leading" secondItem="bNe-EA-lDP" secondAttribute="trailing" constant="69" id="SH4-hk-Y6f"/>
+                <constraint firstItem="bNe-EA-lDP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Se0-Rl-LiM"/>
+                <constraint firstItem="9kD-NX-fHa" firstAttribute="leading" secondItem="hcC-28-xdk" secondAttribute="leading" id="TIr-fu-bfu"/>
+                <constraint firstItem="hcC-28-xdk" firstAttribute="trailing" secondItem="bPE-cm-BaI" secondAttribute="trailing" id="ZCa-Q8-vO8"/>
+                <constraint firstItem="fGh-Kt-fyl" firstAttribute="top" secondItem="tS8-Hn-Tey" secondAttribute="bottom" constant="8" symbolic="YES" id="a4f-bs-ss6"/>
+                <constraint firstItem="fGh-Kt-fyl" firstAttribute="top" secondItem="ddd-G0-LIZ" secondAttribute="bottom" constant="46" id="dc6-3h-CAC"/>
+                <constraint firstItem="fGh-Kt-fyl" firstAttribute="centerX" secondItem="bNe-EA-lDP" secondAttribute="centerX" id="fpH-OE-fos"/>
+                <constraint firstItem="4zZ-du-cMY" firstAttribute="top" secondItem="9kD-NX-fHa" secondAttribute="bottom" constant="12" id="h63-fA-ig2"/>
+                <constraint firstItem="wUZ-22-hi8" firstAttribute="top" secondItem="fGh-Kt-fyl" secondAttribute="bottom" constant="32" id="hHM-Nd-hYb"/>
+                <constraint firstItem="8rN-DC-r0P" firstAttribute="top" secondItem="dlF-x2-yoW" secondAttribute="bottom" constant="24" id="lV6-Hj-LHM"/>
+                <constraint firstItem="fGh-Kt-fyl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="qIs-xw-Oq2"/>
+                <constraint firstItem="bNe-EA-lDP" firstAttribute="top" secondItem="bPE-cm-BaI" secondAttribute="top" id="x9a-4F-eMb"/>
+            </constraints>
             <point key="canvasLocation" x="172" y="108"/>
         </view>
     </objects>

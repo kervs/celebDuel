@@ -291,8 +291,6 @@ static NSString *CellIdentifier = @"Cell Identifier";
 }
 
 - (void)addFundsFired:(id)sender {
-    NSLog(@"%lu",(unsigned long)self.jobArray.count);
-    NSLog(@"%@",self.jobArray);
     AddJobViewController *addJob = [[AddJobViewController alloc]init];
     [self presentViewController:addJob animated:YES completion:nil];
 }

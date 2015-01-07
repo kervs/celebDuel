@@ -33,14 +33,24 @@
     UIPickerView *picker = [[UIPickerView alloc] init];
     picker.dataSource = self;
     picker.delegate = self;
+//    picker.showsSelectionIndicator = YES;
     self.statesTextField.inputView = picker;
     self.theStates = @[@"Alabama", @"Alaska", @"American Samoa", @"Arizona", @"Arkansas", @"California", @"Colorado", @"Connecticut", @"Delaware", @"District of Columbia", @"Florida", @"Georgia", @"Hawaii", @"Idaho", @"Illinois", @"Indiana", @"Iowa", @"Kansas", @"Kentucky", @"Louisiana", @"Maine", @"Maryland", @"Massachusetts", @"Michigan", @"Minnesota", @"Mississippi", @"Missouri", @"Montana", @"Nebraska", @"Nevada", @"New Hampshire", @"New Jersey", @"New Mexico", @"New York", @"North Carolina", @"North Dakota", @"Ohio", @"Oklahoma", @"Oregon", @"Pennsylvania", @"Puerto Rico", @"Rhode Island", @"South Carolina", @"South Dakota", @"Tennessee", @"Texas", @"Utah", @"Vermont", @"Virgin Islands", @"Virgina", @"Washington", @"West Virgina", @"Wisconsin",@"Wyoming",];
 }
 
-//Cancel Button
-- (IBAction)cancelDidFired:(id)sender {
+- (IBAction)canelBtnDidFired:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)TenDollarBtnDidFired:(id)sender {
+    _depositAmountTextField.text = @"10.00";
+}
+- (IBAction)twentyFiveDollarBtnDidFired:(id)sender {
+    _depositAmountTextField.text = @"25.00";
+}
+- (IBAction)fifthyDollarBtnDidFired:(id)sender {
+    _depositAmountTextField.text = @"50.00";
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

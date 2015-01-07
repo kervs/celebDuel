@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
 #import "AddFunds.h"
+#import "MoneyEarnedViewController.h"
 
 
 @interface LeftMenuViewController ()
@@ -51,8 +52,14 @@
             break;
             
         case 1:
-        { AddFunds *fundsView = [[AddFunds alloc]init];
-            [self presentViewController:fundsView animated:YES completion:nil];
+        {   MoneyEarnedViewController  *userCurrentFundView = [[MoneyEarnedViewController alloc]init];
+            [self presentViewController:userCurrentFundView animated:YES completion:nil];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+        }
+        case 3:
+        {   AddFunds *addFundsView = [[AddFunds alloc]init];
+            [self presentViewController:addFundsView animated:YES completion:nil];
             [self.sideMenuViewController hideMenuViewController];
             break;
         }

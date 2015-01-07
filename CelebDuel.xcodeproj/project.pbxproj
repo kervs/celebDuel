@@ -19,6 +19,8 @@
 		3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D93C1A18385F0071A429 /* MainViewController.m */; };
 		3B2353E61A590C6C00C5FB1A /* AddJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2353E41A590C6C00C5FB1A /* AddJobViewController.m */; };
 		3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */; };
+		3B2353EC1A5CB68400C5FB1A /* MoneyEarnedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2353EA1A5CB68400C5FB1A /* MoneyEarnedViewController.m */; };
+		3B2353ED1A5CB68400C5FB1A /* MoneyEarnedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353EB1A5CB68400C5FB1A /* MoneyEarnedViewController.xib */; };
 		3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68B6591A3D07BC002BB539 /* PaymentViewController.m */; };
 		3B7B2A5A1A5200C700EC7D63 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B2A591A5200C700EC7D63 /* RightMenuViewController.m */; };
 		3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */; };
@@ -64,6 +66,9 @@
 		3B2353E31A590C6C00C5FB1A /* AddJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJobViewController.h; sourceTree = "<group>"; };
 		3B2353E41A590C6C00C5FB1A /* AddJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJobViewController.m; sourceTree = "<group>"; };
 		3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddJobViewController.xib; sourceTree = "<group>"; };
+		3B2353E91A5CB68400C5FB1A /* MoneyEarnedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyEarnedViewController.h; sourceTree = "<group>"; };
+		3B2353EA1A5CB68400C5FB1A /* MoneyEarnedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyEarnedViewController.m; sourceTree = "<group>"; };
+		3B2353EB1A5CB68400C5FB1A /* MoneyEarnedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyEarnedViewController.xib; sourceTree = "<group>"; };
 		3B68B6581A3D07BC002BB539 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		3B68B6591A3D07BC002BB539 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		3B7B2A581A5200C700EC7D63 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
@@ -198,6 +203,7 @@
 		3B2353D71A5788F300C5FB1A /* Secondary View */ = {
 			isa = PBXGroup;
 			children = (
+				3B2353E81A5CB62900C5FB1A /* Money Earned View */,
 				3B2353DF1A590BA200C5FB1A /* Add Job View */,
 				3B2353D81A57897E00C5FB1A /* Job View */,
 				1B598ABD1A2C10BA00A1E5C5 /* Add Funds View */,
@@ -220,6 +226,16 @@
 				3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */,
 			);
 			name = "Add Job View";
+			sourceTree = "<group>";
+		};
+		3B2353E81A5CB62900C5FB1A /* Money Earned View */ = {
+			isa = PBXGroup;
+			children = (
+				3B2353E91A5CB68400C5FB1A /* MoneyEarnedViewController.h */,
+				3B2353EA1A5CB68400C5FB1A /* MoneyEarnedViewController.m */,
+				3B2353EB1A5CB68400C5FB1A /* MoneyEarnedViewController.xib */,
+			);
+			name = "Money Earned View";
 			sourceTree = "<group>";
 		};
 		3B2CA71A1A203725004B2AD7 /* MainView */ = {
@@ -383,6 +399,7 @@
 				3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */,
 				1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */,
 				1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */,
+				3B2353ED1A5CB68400C5FB1A /* MoneyEarnedViewController.xib in Resources */,
 				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
 				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
 				3BBE364E1A2671DE00BC26CE /* Main.storyboard in Resources */,
@@ -448,6 +465,7 @@
 				3B8066521A5343B700FD7DAB /* Job.m in Sources */,
 				3B17D93D1A18385F0071A429 /* MainViewController.m in Sources */,
 				3BBE364D1A2671DE00BC26CE /* PageContentViewController.m in Sources */,
+				3B2353EC1A5CB68400C5FB1A /* MoneyEarnedViewController.m in Sources */,
 				3BBE364C1A2671DE00BC26CE /* PageViewController.m in Sources */,
 				3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */,
 				3BBE36541A267BDE00BC26CE /* SignUpViewController.m in Sources */,

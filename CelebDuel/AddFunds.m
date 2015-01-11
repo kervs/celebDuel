@@ -7,16 +7,20 @@
 //
 
 #import "AddFunds.h"
-#import "Stripe.h"
-#import "PaymentViewController.h"
+
 
 
 @interface AddFunds ()
 
 @property (strong,nonatomic) NSArray *theStates;
-@property (weak, nonatomic) IBOutlet UITextField *statesTextField;
-
+@property (strong, nonatomic) IBOutlet UITextField *statesTextField;
+@property (strong, nonatomic) IBOutlet UITextField *firstName;
+@property (strong, nonatomic) IBOutlet UITextField *lastName;
+@property (strong, nonatomic) IBOutlet UITextField *zipCode;
 @property (strong, nonatomic) IBOutlet UITextField *depositAmountTextField;
+@property IBOutlet PTKView *paymentView;
+@property (strong, nonatomic) IBOutlet UILabel *enterCardLbl;
+@property(strong,nonatomic)STPCard * card;
 
 @end
 
@@ -27,15 +31,31 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.depositAmountTextField setDelegate:self];
-    _depositAmountTextField.keyboardType = UIKeyboardTypeNumberPad;
+    [self.firstName setDelegate:self];
+    [self.lastName setDelegate:self];
+    [self.zipCode setDelegate:self];
+    
+    self.firstName.returnKeyType = UIReturnKeyNext;
+    self.lastName.returnKeyType = UIReturnKeyNext;
+    
     
     // Initialize Data
     UIPickerView *picker = [[UIPickerView alloc] init];
     picker.dataSource = self;
     picker.delegate = self;
-//    picker.showsSelectionIndicator = YES;
+
     self.statesTextField.inputView = picker;
     self.theStates = @[@"Alabama", @"Alaska", @"American Samoa", @"Arizona", @"Arkansas", @"California", @"Colorado", @"Connecticut", @"Delaware", @"District of Columbia", @"Florida", @"Georgia", @"Hawaii", @"Idaho", @"Illinois", @"Indiana", @"Iowa", @"Kansas", @"Kentucky", @"Louisiana", @"Maine", @"Maryland", @"Massachusetts", @"Michigan", @"Minnesota", @"Mississippi", @"Missouri", @"Montana", @"Nebraska", @"Nevada", @"New Hampshire", @"New Jersey", @"New Mexico", @"New York", @"North Carolina", @"North Dakota", @"Ohio", @"Oklahoma", @"Oregon", @"Pennsylvania", @"Puerto Rico", @"Rhode Island", @"South Carolina", @"South Dakota", @"Tennessee", @"Texas", @"Utah", @"Vermont", @"Virgin Islands", @"Virgina", @"Washington", @"West Virgina", @"Wisconsin",@"Wyoming",];
+    
+    self.paymentView = [[PTKView alloc] init];
+    self.paymentView.delegate = self;
+    [self.view addSubview:self.paymentView];
+    
+    self.paymentView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.enterCardLbl attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];
 }
 
 - (IBAction)canelBtnDidFired:(id)sender {
@@ -43,29 +63,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)TenDollarBtnDidFired:(id)sender {
-    _depositAmountTextField.text = @"10.00";
-}
-- (IBAction)twentyFiveDollarBtnDidFired:(id)sender {
-    _depositAmountTextField.text = @"25.00";
-}
-- (IBAction)fifthyDollarBtnDidFired:(id)sender {
-    _depositAmountTextField.text = @"50.00";
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([self.depositAmountTextField isFirstResponder] && [touch view] != self.depositAmountTextField) {
-        [self.depositAmountTextField resignFirstResponder];
-    }
-    if ([self.statesTextField isFirstResponder] && [touch view] != self.statesTextField) {
-        [self.statesTextField resignFirstResponder];
-    }
-    
-    [super touchesBegan:touches withEvent:event];
-
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -90,13 +87,84 @@
     [self.statesTextField resignFirstResponder];
 }
 
+- (void)paymentView:(PTKView *)view withCard:(PTKCard *)card isValid:(BOOL)valid
+{
+    // Toggle navigation, for example
+    NSLog(@"Card number: %@", card.number);
+    NSLog(@"Card expiry: %lu/%lu", (unsigned long)card.expMonth, (unsigned long)card.expYear);
+    NSLog(@"Card cvc: %@", card.cvc);
+    NSLog(@"Address zip: %@", card.addressZip);
+    self.card = [[STPCard alloc] init];
+    self.card.number = card.number;
+    self.card.expMonth = card.expMonth;
+    self.card.expYear = card.expYear;
+    self.card.cvc = card.cvc;
+}
 
-- (IBAction)creditCard:(id)sender {
-    CreditCardInfoView *newView = [[CreditCardInfoView alloc]init];
+
+- (IBAction)chargeCard:(id)sender {
+    self.card.name = [NSString stringWithFormat:@"%@ %@",self.firstName.text,self.lastName.text];
+    self.card.addressZip = self.zipCode.text;
+    self.card.addressState = self.statesTextField.text;
     
-    [self presentViewController:newView animated:YES completion:nil];
+    [Stripe createTokenWithCard:_card completion:^(STPToken *token, NSError *error) {
+        if (error) {
+            [self handleError:error];
+        } else {
+            NSLog(@"got token");
+            NSNumber *cost = [NSNumber numberWithInt:[self.depositAmountTextField.text intValue]*100];
+            NSMutableDictionary *newDic =[[NSMutableDictionary alloc]init];
+            [newDic setObject:token.tokenId forKey:@"token"];
+            [newDic setObject:cost forKey:@"amount"];
+            [PFCloud callFunctionInBackground:@"chargeCard"
+                               withParameters:newDic
+                                        block:^(id object, NSError *error) {
+                                            
+                                            if(error)
+                                            {
+                                                [self handleError:error];
+                                            }
+                                            else {
+                                                
+                                                NSLog(@"it works");
+                                            }
+                                        }];
+            
+        }
+    }];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.depositAmountTextField) {
+        [ self.firstName becomeFirstResponder];
+    } else if(textField == self.firstName){
+        [self.lastName becomeFirstResponder];
+    }
+    else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+- (void) handleError:(NSError *)error {
+    NSString *errorString = [error userInfo][@"error"];
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                     message: errorString
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert show];
+    
+    
+}
+
 
 
 @end

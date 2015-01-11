@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CreditCardInfoView.h"
+#import "PTKView.h"
+#import "Stripe.h"
+#import <Parse/Parse.h>
 
-@interface AddFunds : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
+@interface AddFunds : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate,PTKViewDelegate>
 
 
 

@@ -34,13 +34,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view
-    _emailField.delegate = self;
-    _passwordField.delegate = self;
-    _firstNameField.delegate = self;
-    _lastName.delegate = self;
-    _emailField.returnKeyType = UIReturnKeyNext;
-    _passwordField.returnKeyType = UIReturnKeyNext;
-    _firstNameField.returnKeyType = UIReturnKeyNext;
+    self.emailField.delegate = self;
+    self.passwordField.delegate = self;
+    self.firstNameField.delegate = self;
+    self.lastName.delegate = self;
+    self.emailField.returnKeyType = UIReturnKeyNext;
+    self.passwordField.returnKeyType = UIReturnKeyNext;
+    self.firstNameField.returnKeyType = UIReturnKeyNext;
 
 }
 
@@ -64,7 +64,7 @@
             
         } else {
             [self createMainView];
-            [[UIApplication sharedApplication].keyWindow setRootViewController:_sideMenuViewController];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:self.sideMenuViewController];
             [self sendWelcomeEmail];
         }
     }];
@@ -73,15 +73,15 @@
 
 
 - (IBAction)signUpFired:(UIButton *)sender {
-    [ _passwordField resignFirstResponder];
-    [_emailField resignFirstResponder];
-    [_firstNameField resignFirstResponder];
-    [_lastName resignFirstResponder];
+    [ self.passwordField resignFirstResponder];
+    [self.emailField resignFirstResponder];
+    [self.firstNameField resignFirstResponder];
+    [self.lastName resignFirstResponder];
     [self checkFieldsComplete];
 }
 
 - (void) checkFieldsComplete { //check user has completed all fields
-    if ([_emailField.text isEqualToString:@""] || [_passwordField.text isEqualToString:@""]|| [_firstNameField.text isEqualToString:@""] || [_lastName.text isEqualToString:@""]) {
+    if ([self.emailField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""]|| [self.firstNameField.text isEqualToString:@""] || [self.lastName.text isEqualToString:@""]) {
         NSString *message = @"You need to complete all fields";
         [self displayAlertView:message];
     }
@@ -94,17 +94,17 @@
 - (void) registerNewUser {
     NSLog(@"registering....");
     PFUser *newUser = [PFUser user];
-    newUser.email = _emailField.text;
-    newUser.password = _passwordField.text;
-    newUser.username = _emailField.text;
-    NSString *fullName = [NSString stringWithFormat:@"%@ %@",_firstNameField.text,_lastName.text];
+    newUser.email = self.emailField.text;
+    newUser.password = self.passwordField.text;
+    newUser.username = self.emailField.text;
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@",self.firstNameField.text,self.lastName.text];
     newUser[@"fullName"]= fullName;
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             NSLog(@"Registration success!");
             [self createMainView];
-            [[UIApplication sharedApplication].keyWindow setRootViewController:_sideMenuViewController];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:self.sideMenuViewController];
             [self sendWelcomeEmail];
 
             }
@@ -131,21 +131,21 @@
 
 }
 - (void)createMainView {
-    _navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-    _leftMenuViewController = [[LeftMenuViewController alloc] init];
-    _rightMenuViewController = [[RightMenuViewController alloc] init];
+    self.navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+    self.leftMenuViewController = [[LeftMenuViewController alloc] init];
+    self.rightMenuViewController = [[RightMenuViewController alloc] init];
     
-    _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_navCon
-                                                                    leftMenuViewController:_leftMenuViewController
-                                                                   rightMenuViewController:_rightMenuViewController];
-    _sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-    _sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
-    _sideMenuViewController.delegate = self;
-    _sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    _sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    _sideMenuViewController.contentViewShadowOpacity = 0.6;
-    _sideMenuViewController.contentViewShadowRadius = 12;
-    _sideMenuViewController.contentViewShadowEnabled = YES;
+    self.sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:self.navCon
+                                                                    leftMenuViewController:self.leftMenuViewController
+                                                                   rightMenuViewController:self.rightMenuViewController];
+    self.sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    self.sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    self.sideMenuViewController.delegate = self;
+    self.sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    self.sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    self.sideMenuViewController.contentViewShadowOpacity = 0.6;
+    self.sideMenuViewController.contentViewShadowRadius = 12;
+    self.sideMenuViewController.contentViewShadowEnabled = YES;
 
     
 }
@@ -167,12 +167,12 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-  if (textField == _emailField) {
-        [ _passwordField becomeFirstResponder];
-    } else if(textField == _emailField){
-        [_firstNameField becomeFirstResponder];
-    } else if(textField == _firstNameField){
-        [_lastName becomeFirstResponder];
+  if (textField == self.emailField) {
+        [ self.passwordField becomeFirstResponder];
+    } else if(textField == self.emailField){
+        [self.firstNameField becomeFirstResponder];
+    } else if(textField == self.firstNameField){
+        [self.lastName becomeFirstResponder];
     }
     else{
         [textField resignFirstResponder];

@@ -51,7 +51,7 @@
 
 - (BOOL) checkFieldsComplete {
     //check user has completed all fields
-    if ([_amountToBeWithdrawn.text isEqualToString:@""]){
+    if ([self.amountToBeWithdrawn.text isEqualToString:@""]){
         NSString *message = @"You need to complete all fields";
         [self displayAlertView:message];
         return NO;
@@ -64,7 +64,7 @@
 
 - (void)sendAmountToPayPal{
     
-    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:_amountToBeWithdrawn.text];
+    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amountToBeWithdrawn.text];
     NSMutableDictionary *newDic =[[NSMutableDictionary alloc]init];
     [newDic setObject:[PFUser currentUser].objectId forKey:@"userId"];
     [newDic setObject:amount forKey:@"amount"];

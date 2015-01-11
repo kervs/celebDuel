@@ -12,8 +12,6 @@
 #import <FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
-NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
-
 
 @interface AppDelegate ()
 
@@ -30,8 +28,13 @@ NSString * const StripePublishableKey = @"pk_test_4jaNNNCGZi1gAapUj9B9DFb5";
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
-    [Parse setApplicationId:@"0e3YLZ108fUvdIXaaurjcSVmY0zRROAieiuQ2LwU"
-                  clientKey:@"EUXFiDdUGIJao11NNWQepHbCciLrPitVlTFQCPHu"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    NSString *applicationId = [dictionary objectForKey:@"parseApplicationId"];
+    NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
+    NSString *StripePublishableKey = [dictionary objectForKey:@"StripePublishableKey"];
+    
+    [Parse setApplicationId:applicationId
+                  clientKey:clientKey];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];

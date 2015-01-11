@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */; };
 		1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */; };
-		1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */; };
-		1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */; };
 		3B17D9181A1837630071A429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D9171A1837630071A429 /* main.m */; };
 		3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D91A1A1837630071A429 /* AppDelegate.m */; };
 		3B17D9231A1837630071A429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D9221A1837630071A429 /* Images.xcassets */; };
@@ -21,7 +19,7 @@
 		3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353E51A590C6C00C5FB1A /* AddJobViewController.xib */; };
 		3B2353EC1A5CB68400C5FB1A /* MoneyEarnedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2353EA1A5CB68400C5FB1A /* MoneyEarnedViewController.m */; };
 		3B2353ED1A5CB68400C5FB1A /* MoneyEarnedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353EB1A5CB68400C5FB1A /* MoneyEarnedViewController.xib */; };
-		3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68B6591A3D07BC002BB539 /* PaymentViewController.m */; };
+		3B2353EF1A5F42A000C5FB1A /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B2353EE1A5F42A000C5FB1A /* Keys.plist */; };
 		3B7B2A5A1A5200C700EC7D63 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B2A591A5200C700EC7D63 /* RightMenuViewController.m */; };
 		3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */; };
 		3B8066521A5343B700FD7DAB /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8066511A5343B700FD7DAB /* Job.m */; };
@@ -31,6 +29,8 @@
 		3BBE364E1A2671DE00BC26CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE364B1A2671DE00BC26CE /* Main.storyboard */; };
 		3BBE36511A26747600BC26CE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE36501A26747600BC26CE /* LoginViewController.m */; };
 		3BBE36541A267BDE00BC26CE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE36531A267BDE00BC26CE /* SignUpViewController.m */; };
+		3BEC0B891A62282B00D32577 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC0B871A62282B00D32577 /* ProfileViewController.m */; };
+		3BEC0B8A1A62282B00D32577 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BEC0B881A62282B00D32577 /* ProfileViewController.xib */; };
 		BA2224ED4DB814597C5C25D8 /* libPods-CelebDuel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +48,6 @@
 		1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFunds.h; sourceTree = "<group>"; };
 		1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFunds.m; sourceTree = "<group>"; };
 		1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFunds.xib; sourceTree = "<group>"; };
-		1B598AC11A2C11BE00A1E5C5 /* CreditCardInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardInfoView.h; sourceTree = "<group>"; };
-		1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardInfoView.m; sourceTree = "<group>"; };
-		1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardInfoView.xib; sourceTree = "<group>"; };
 		3B17D9121A1837630071A429 /* CelebDuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelebDuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B17D9161A1837630071A429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B17D9171A1837630071A429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,8 +66,7 @@
 		3B2353E91A5CB68400C5FB1A /* MoneyEarnedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyEarnedViewController.h; sourceTree = "<group>"; };
 		3B2353EA1A5CB68400C5FB1A /* MoneyEarnedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyEarnedViewController.m; sourceTree = "<group>"; };
 		3B2353EB1A5CB68400C5FB1A /* MoneyEarnedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyEarnedViewController.xib; sourceTree = "<group>"; };
-		3B68B6581A3D07BC002BB539 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
-		3B68B6591A3D07BC002BB539 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		3B2353EE1A5F42A000C5FB1A /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		3B7B2A581A5200C700EC7D63 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
 		3B7B2A591A5200C700EC7D63 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
 		3B7D4E801A2071BF00FDCFB3 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
@@ -98,6 +94,9 @@
 		3BBE366C1A268E3200BC26CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3BBE366E1A268E3C00BC26CE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3BBE36701A268E5400BC26CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3BEC0B861A62282B00D32577 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3BEC0B871A62282B00D32577 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3BEC0B881A62282B00D32577 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		43091654605EF4F3FD25D5FA /* libPods-CelebDuel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CelebDuel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43494C7F7D6D150F06A336CA /* Pods-CelebDuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.debug.xcconfig"; sourceTree = "<group>"; };
 		EC730A4AAA7A8C9D563943B3 /* Pods-CelebDuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebDuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-CelebDuel/Pods-CelebDuel.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,11 +127,6 @@
 				1B598ABE1A2C11BE00A1E5C5 /* AddFunds.h */,
 				1B598ABF1A2C11BE00A1E5C5 /* AddFunds.m */,
 				1B598AC01A2C11BE00A1E5C5 /* AddFunds.xib */,
-				1B598AC11A2C11BE00A1E5C5 /* CreditCardInfoView.h */,
-				1B598AC21A2C11BE00A1E5C5 /* CreditCardInfoView.m */,
-				1B598AC31A2C11BE00A1E5C5 /* CreditCardInfoView.xib */,
-				3B68B6581A3D07BC002BB539 /* PaymentViewController.h */,
-				3B68B6591A3D07BC002BB539 /* PaymentViewController.m */,
 			);
 			name = "Add Funds View";
 			sourceTree = "<group>";
@@ -177,6 +171,7 @@
 			children = (
 				3B17D9191A1837630071A429 /* AppDelegate.h */,
 				3B17D91A1A1837630071A429 /* AppDelegate.m */,
+				3B2353EE1A5F42A000C5FB1A /* Keys.plist */,
 				3B17D9161A1837630071A429 /* Info.plist */,
 				3B17D9171A1837630071A429 /* main.m */,
 			);
@@ -203,6 +198,7 @@
 		3B2353D71A5788F300C5FB1A /* Secondary View */ = {
 			isa = PBXGroup;
 			children = (
+				3BEC0B851A6227EB00D32577 /* Profile View */,
 				3B2353E81A5CB62900C5FB1A /* Money Earned View */,
 				3B2353DF1A590BA200C5FB1A /* Add Job View */,
 				3B2353D81A57897E00C5FB1A /* Job View */,
@@ -283,6 +279,16 @@
 				3B8066511A5343B700FD7DAB /* Job.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3BEC0B851A6227EB00D32577 /* Profile View */ = {
+			isa = PBXGroup;
+			children = (
+				3BEC0B861A62282B00D32577 /* ProfileViewController.h */,
+				3BEC0B871A62282B00D32577 /* ProfileViewController.m */,
+				3BEC0B881A62282B00D32577 /* ProfileViewController.xib */,
+			);
+			name = "Profile View";
 			sourceTree = "<group>";
 		};
 		49CCB4A942B62240D59804EB /* Frameworks */ = {
@@ -396,9 +402,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2353EF1A5F42A000C5FB1A /* Keys.plist in Resources */,
 				3B2353E71A590C6C00C5FB1A /* AddJobViewController.xib in Resources */,
+				3BEC0B8A1A62282B00D32577 /* ProfileViewController.xib in Resources */,
 				1B598AC51A2C11BE00A1E5C5 /* AddFunds.xib in Resources */,
-				1B598AC71A2C11BE00A1E5C5 /* CreditCardInfoView.xib in Resources */,
 				3B2353ED1A5CB68400C5FB1A /* MoneyEarnedViewController.xib in Resources */,
 				3B17D9231A1837630071A429 /* Images.xcassets in Resources */,
 				3B17D9261A1837630071A429 /* LaunchScreen.xib in Resources */,
@@ -456,8 +463,8 @@
 				1B598AC41A2C11BE00A1E5C5 /* AddFunds.m in Sources */,
 				3B2353E61A590C6C00C5FB1A /* AddJobViewController.m in Sources */,
 				3B17D91B1A1837630071A429 /* AppDelegate.m in Sources */,
-				1B598AC61A2C11BE00A1E5C5 /* CreditCardInfoView.m in Sources */,
 				3B7D4E811A2071BF00FDCFB3 /* LeftMenuViewController.m in Sources */,
+				3BEC0B891A62282B00D32577 /* ProfileViewController.m in Sources */,
 				3B8066591A5347C000FD7DAB /* DataSource.m in Sources */,
 				3BBE36511A26747600BC26CE /* LoginViewController.m in Sources */,
 				3B17D9181A1837630071A429 /* main.m in Sources */,
@@ -467,7 +474,6 @@
 				3BBE364D1A2671DE00BC26CE /* PageContentViewController.m in Sources */,
 				3B2353EC1A5CB68400C5FB1A /* MoneyEarnedViewController.m in Sources */,
 				3BBE364C1A2671DE00BC26CE /* PageViewController.m in Sources */,
-				3B68B65A1A3D07BC002BB539 /* PaymentViewController.m in Sources */,
 				3BBE36541A267BDE00BC26CE /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,9 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _emailLabel.delegate = self;
-    _emailLabel.returnKeyType = UIReturnKeyNext;
-    _passwordLabel.delegate = self;
+    self.emailLabel.delegate = self;
+    self.emailLabel.returnKeyType = UIReturnKeyNext;
+    self.passwordLabel.delegate = self;
 }
 
 - (IBAction)connectWithFB:(UIButton *)sender {
@@ -43,12 +43,12 @@
 
 
 - (IBAction)loginFired:(UIButton *)sender {    
-    [PFUser logInWithUsernameInBackground:_emailLabel.text password:_passwordLabel.text
+    [PFUser logInWithUsernameInBackground:self.emailLabel.text password:self.passwordLabel.text
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             // Do stuff after successful login.
                                             [self createMainView];
-                                            [[UIApplication sharedApplication].keyWindow setRootViewController:_sideMenuViewController];
+                                            [[UIApplication sharedApplication].keyWindow setRootViewController:self.sideMenuViewController];
 
                                         } else {
                                             // The login failed. Check error to see why.
@@ -71,21 +71,21 @@
 
 
 - (void)createMainView {
-    _navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
-    _leftMenuViewController = [[LeftMenuViewController alloc] init];
-    _rightMenuViewController = [[RightMenuViewController alloc] init];
+    self.navCon = [[UINavigationController alloc]initWithRootViewController:[[MainViewController  alloc]init]];
+    self.leftMenuViewController = [[LeftMenuViewController alloc] init];
+    self.rightMenuViewController = [[RightMenuViewController alloc] init];
     
-    _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_navCon
-                                                         leftMenuViewController:_leftMenuViewController
-                                                        rightMenuViewController:_rightMenuViewController];
-    _sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-    _sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
-    _sideMenuViewController.delegate = self;
-    _sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    _sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    _sideMenuViewController.contentViewShadowOpacity = 0.6;
-    _sideMenuViewController.contentViewShadowRadius = 12;
-    _sideMenuViewController.contentViewShadowEnabled = YES;
+    self.sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:self.navCon
+                                                         leftMenuViewController:self.leftMenuViewController
+                                                        rightMenuViewController:self.rightMenuViewController];
+    self.sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    self.sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    self.sideMenuViewController.delegate = self;
+    self.sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    self.sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    self.sideMenuViewController.contentViewShadowOpacity = 0.6;
+    self.sideMenuViewController.contentViewShadowRadius = 12;
+    self.sideMenuViewController.contentViewShadowEnabled = YES;
     
     
 }
@@ -99,8 +99,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == _emailLabel) {
-        [_passwordLabel becomeFirstResponder];
+    if (textField == self.emailLabel) {
+        [self.passwordLabel becomeFirstResponder];
     }
     
     else {

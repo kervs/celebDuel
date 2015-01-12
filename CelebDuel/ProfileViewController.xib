@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
+                <outlet property="addPictureBtn" destination="flh-34-2Ga" id="D5N-7p-2lE"/>
+                <outlet property="editBtn" destination="Qwi-Yz-oVK" id="dUM-03-1wG"/>
+                <outlet property="profileImageView" destination="pv2-Uv-HQq" id="5UL-5F-ynK"/>
+                <outlet property="takePictureBtn" destination="gHg-0N-z7W" id="e3h-yv-HUo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +17,100 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pv2-Uv-HQq">
+                    <rect key="frame" x="225" y="44" width="151" height="151"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="151" id="7xg-KO-Ns8"/>
+                        <constraint firstAttribute="width" constant="151" id="w95-9r-yOq"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUs-mr-Wd6">
+                    <rect key="frame" x="20" y="241" width="560" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Zw6-NY-A3D"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwi-Yz-oVK">
+                    <rect key="frame" x="20" y="20" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="QeB-0Z-umT"/>
+                    </constraints>
+                    <state key="normal" title="Edit">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="editBtnDidPressed:" destination="-1" eventType="touchUpInside" id="Qpd-nd-lFC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUK-3l-UNj">
+                    <rect key="frame" x="532" y="20" width="48" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelBtnDidPressed:" destination="-1" eventType="touchUpInside" id="qtc-rj-ppX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flh-34-2Ga">
+                    <rect key="frame" x="480" y="203" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Hl6-Ov-z6w"/>
+                    </constraints>
+                    <state key="normal" title="Add Picture">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addPictureDidPressed:" destination="-1" eventType="touchUpInside" id="uKG-86-99A"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-0N-z7W">
+                    <rect key="frame" x="20" y="203" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="lAh-ve-u0b"/>
+                    </constraints>
+                    <state key="normal" title="Take Picture">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="takePictureDidPressed:" destination="-1" eventType="touchUpInside" id="SVs-zS-3ix"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Qwi-Yz-oVK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="1ga-4i-A0Y"/>
+                <constraint firstAttribute="trailing" secondItem="kUs-mr-Wd6" secondAttribute="trailing" constant="20" symbolic="YES" id="4ZS-Ww-HRJ"/>
+                <constraint firstItem="pv2-Uv-HQq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="7wX-1E-8jD"/>
+                <constraint firstItem="gHg-0N-z7W" firstAttribute="top" secondItem="pv2-Uv-HQq" secondAttribute="bottom" constant="8" id="Apt-Lm-SQK"/>
+                <constraint firstItem="flh-34-2Ga" firstAttribute="leading" secondItem="gHg-0N-z7W" secondAttribute="trailing" constant="20" id="DAe-fO-rcr"/>
+                <constraint firstAttribute="centerX" secondItem="pv2-Uv-HQq" secondAttribute="centerX" id="I9e-j4-u4F"/>
+                <constraint firstAttribute="trailing" secondItem="QUK-3l-UNj" secondAttribute="trailing" constant="20" symbolic="YES" id="Tk7-R5-aqX"/>
+                <constraint firstItem="flh-34-2Ga" firstAttribute="leading" secondItem="gHg-0N-z7W" secondAttribute="trailing" constant="63" id="Z2f-ZM-JoS"/>
+                <constraint firstItem="kUs-mr-Wd6" firstAttribute="top" secondItem="gHg-0N-z7W" secondAttribute="bottom" constant="8" id="bCF-6Y-hqx"/>
+                <constraint firstItem="flh-34-2Ga" firstAttribute="top" secondItem="pv2-Uv-HQq" secondAttribute="bottom" constant="8" id="bbi-dK-yM8"/>
+                <constraint firstAttribute="centerX" secondItem="flh-34-2Ga" secondAttribute="centerX" id="cuI-nJ-feM"/>
+                <constraint firstItem="Qwi-Yz-oVK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="j9c-D3-jxa"/>
+                <constraint firstItem="kUs-mr-Wd6" firstAttribute="top" secondItem="flh-34-2Ga" secondAttribute="bottom" constant="8" id="pEk-rW-yPi"/>
+                <constraint firstItem="kUs-mr-Wd6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="ugQ-7y-aVD"/>
+                <constraint firstAttribute="trailing" secondItem="flh-34-2Ga" secondAttribute="trailing" constant="20" symbolic="YES" id="w6z-bh-UFR"/>
+                <constraint firstItem="flh-34-2Ga" firstAttribute="top" secondItem="pv2-Uv-HQq" secondAttribute="bottom" constant="8" id="x3V-Xf-X6i"/>
+                <constraint firstItem="gHg-0N-z7W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="z0P-EV-K6w"/>
+                <constraint firstItem="QUK-3l-UNj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="z4C-qJ-Zmj"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="DAe-fO-rcr"/>
+                    <exclude reference="Z2f-ZM-JoS"/>
+                    <exclude reference="bbi-dK-yM8"/>
+                    <exclude reference="cuI-nJ-feM"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="587" y="343"/>
         </view>
     </objects>
 </document>

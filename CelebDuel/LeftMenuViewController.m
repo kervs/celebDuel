@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "AddFunds.h"
 #import "MoneyEarnedViewController.h"
+#import "ProfileViewController.h"
 
 
 @interface LeftMenuViewController ()
@@ -48,9 +49,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
-            [self displayMainViewController];
+        {
+            ProfileViewController *profileView = [ProfileViewController new];
+            [self presentViewController:profileView animated:YES completion:nil];
+            [self.sideMenuViewController hideMenuViewController];
             break;
-            
+        }
         case 1:
         {   MoneyEarnedViewController  *userCurrentFundView = [[MoneyEarnedViewController alloc]init];
             [self presentViewController:userCurrentFundView animated:YES completion:nil];
@@ -113,7 +117,7 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"Account", @"Money Earned", @"Jobs", @"Fund Account", @"Messages",@"Support",@"Log Out"];
+    NSArray *titles = @[@"Profile", @"Money Earned", @"Jobs", @"Fund Account", @"Messages",@"Support",@"Log Out"];
     NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty",@"IconEmpty",@"IconEmpty"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];

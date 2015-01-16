@@ -53,6 +53,8 @@
     
     self.paymentView.translatesAutoresizingMaskIntoConstraints = NO;
     
+  
+    
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.paymentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.enterCardLbl attribute:NSLayoutAttributeLeading multiplier:1.0f constant:20.0f]];

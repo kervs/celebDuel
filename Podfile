@@ -8,9 +8,9 @@ target 'CelebDuel' do
     pod 'Parse'
     pod 'Facebook-iOS-SDK'
     pod 'ParseFacebookUtils'
-    pod 'CardIO'
     pod 'Stripe'
     pod 'PaymentKit'
+    pod 'Firebase', '>= 2.1.1'
 
 end
 

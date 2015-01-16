@@ -14,9 +14,7 @@
 #import <FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
-@interface SignUpViewController () <UITextFieldDelegate>{
-    BOOL checked;
-}
+@interface SignUpViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
